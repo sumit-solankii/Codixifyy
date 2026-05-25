@@ -1034,6 +1034,7 @@ img {
   background: rgba(255, 255, 255, 0.02);
   border-right: 1px solid rgba(255, 255, 255, 0.05);
   user-select: none;
+  pointer-events: none;
   overflow: hidden;
 }
 
@@ -1065,6 +1066,9 @@ img {
   white-space: pre;
   overflow-wrap: normal;
   overflow-x: auto;
+  -webkit-user-select: text;
+  user-select: text;
+  touch-action: manipulation;
 }
 
 #codeEditor::placeholder {
@@ -1666,7 +1670,6 @@ img {
 
   .level-layout {
     grid-template-columns: 1fr;
-    height: auto;
   }
 
   .level-layout .panel {
@@ -1674,13 +1677,22 @@ img {
   }
 
   .level-layout .panel.active {
-    display: block;
     animation: panelFadeIn 0.35s ease forwards;
   }
 
-  .instructions-panel,
-  .editor-panel,
-  .preview-panel {
+  .level-layout .instructions-panel.active {
+    display: block;
+  }
+
+  .level-layout .editor-panel.active {
+    display: flex;
+    flex-direction: column;
+    min-height: 60vh;
+  }
+
+  .level-layout .preview-panel.active {
+    display: flex;
+    flex-direction: column;
     min-height: 60vh;
   }
 
@@ -1725,6 +1737,10 @@ img {
     gap: 12px;
     padding: 12px 16px;
   }
+
+  #codeEditor {
+    font-size: 1rem;
+  }
 }
 
 /* Small Mobile */
@@ -1765,6 +1781,7 @@ img {
 
   #codeEditor {
     padding-left: 16px;
+    font-size: 1rem;
   }
 
   .instructions-panel {
