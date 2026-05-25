@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Learning Path | Codixify</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="animated-bg"></div>
+
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" role="navigation">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <span class="logo-icon">C</span>
+        <span class="logo-text">Codixify</span>
+      </a>
+      <div class="navbar-links">
+        <a href="index.html">Home</a>
+        <a href="html-levels.html" class="active">Levels</a>
+        <a href="index.html#about">About</a>
+      </div>
+      <button class="navbar-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== LEVELS PAGE ===== -->
+  <div class="levels-page">
+
+    <!-- ===== HERO / HEADER ===== -->
+    <section class="levels-hero">
+      <div class="container">
+        <div class="section-header" style="text-align:center;">
+          <div class="section-label">Learning Path</div>
+          <h1 class="section-title">HTML Learning Path</h1>
+          <p class="section-subtitle" style="margin:0 auto;">
+            Learn HTML step-by-step by building real mini projects. Each level teaches you new concepts through hands-on coding.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== LEVEL CARDS ===== -->
+    <div class="levels-container">
+      <div class="level-cards-grid">
+
+        <!-- ===== LEVEL 1 ===== -->
+        <div class="level-card card-available" onclick="openLevelPreview(1)">
+          <div class="card-glow"></div>
+
+          <div class="level-card-header">
+            <div class="level-number">1</div>
+            <span class="difficulty-badge beginner">Beginner</span>
+          </div>
+
+          <h3 class="level-card-title">Understanding HTML From Scratch</h3>
+
+          <p class="level-card-desc">
+            Learn HTML from absolute zero. Understand document structure, headings, paragraphs, line breaks, buttons, images, and div containers. Build your first complete webpage step by step.
+          </p>
+
+          <div class="level-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%;"></div>
+            </div>
+            <span class="progress-text">0%</span>
+          </div>
+
+          <div class="level-card-footer">
+            <span class="level-lessons">15 Lessons</span>
+            <span class="btn btn-primary btn-sm" style="cursor:pointer;">
+              Start Level
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- ===== LEVEL 2 ===== -->
+        <div class="level-card card-available" onclick="openLevelPreview(2)">
+          <div class="card-glow"></div>
+
+          <div class="level-card-header">
+            <div class="level-number">2</div>
+            <span class="difficulty-badge beginner">Beginner</span>
+          </div>
+
+          <h3 class="level-card-title">Building a Complete Website</h3>
+
+          <p class="level-card-desc">
+            Build a complete personal website from scratch! Learn headings, text formatting, lists, images, links, forms, and interactive inputs — all while building one cohesive page step by step.
+          </p>
+
+          <div class="level-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%;"></div>
+            </div>
+            <span class="progress-text">0%</span>
+          </div>
+
+          <div class="level-card-footer">
+            <span class="level-lessons">24 Lessons</span>
+            <span class="btn btn-primary btn-sm" style="cursor:pointer;">
+              Start Level
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- ===== LEVEL 3 ===== -->
+        <div class="level-card card-available" onclick="openLevelPreview(3)">
+          <div class="card-glow"></div>
+
+          <div class="level-card-header">
+            <div class="level-number">3</div>
+            <span class="difficulty-badge intermediate">Intermediate</span>
+          </div>
+
+          <h3 class="level-card-title">Building Real Website Layouts</h3>
+
+          <p class="level-card-desc">
+            Build real website layouts including hero sections, navbars, feature cards, contact forms, footers, and a complete mini website.
+          </p>
+
+          <div class="level-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%;"></div>
+            </div>
+            <span class="progress-text">0%</span>
+          </div>
+
+          <div class="level-card-footer">
+            <span class="level-lessons">28 Lessons</span>
+            <span class="btn btn-primary btn-sm" style="cursor:pointer;">
+              Start Level
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- ===== LEVEL 4 ===== -->
+        <div class="level-card card-available" onclick="openLevelPreview(4)">
+          <div class="card-glow"></div>
+
+          <div class="level-card-header">
+            <div class="level-number">4</div>
+            <span class="difficulty-badge intermediate">Intermediate</span>
+          </div>
+
+          <h3 class="level-card-title">Mini Projects</h3>
+
+          <p class="level-card-desc">
+            Apply everything you've learned by building real mini projects including a personal profile card and a complete blog layout.
+          </p>
+
+          <div class="level-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%;"></div>
+            </div>
+            <span class="progress-text">0%</span>
+          </div>
+
+          <div class="level-card-footer">
+            <span class="level-lessons">50 Lessons</span>
+            <span class="btn btn-primary btn-sm" style="cursor:pointer;">
+              Start Level
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== LEVEL PREVIEW MODAL ===== -->
+  <div class="level-preview-overlay" id="levelPreviewOverlay">
+    <div class="level-preview-modal">
+      <button class="preview-modal-close" id="previewClose" aria-label="Close">✕</button>
+
+      <div class="preview-modal-top">
+        <div class="preview-level-circle" id="previewLevelNum">1</div>
+        <span class="preview-modal-badge" id="previewBadge">Level 1</span>
+      </div>
+
+      <h2 class="preview-modal-title" id="previewTitle">HTML Basics</h2>
+
+      <p class="preview-modal-desc" id="previewDesc">Learn the foundations of HTML...</p>
+
+      <div class="preview-modal-meta">
+        <span class="preview-meta-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <span id="previewTime">~15 minutes</span>
+        </span>
+        <span class="preview-meta-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c6 3 10 0 12-2v-5"/></svg>
+          <span id="previewLessons">15 Lessons</span>
+        </span>
+        <span class="preview-meta-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span id="previewDifficulty">Beginner</span>
+        </span>
+      </div>
+
+      <div class="preview-modal-output">
+        <div class="preview-output-label">Final Output Preview</div>
+        <div class="preview-output-frame-wrap">
+          <iframe class="preview-output-frame" id="previewOutputFrame" title="Level Preview"></iframe>
+        </div>
+      </div>
+
+      <div class="preview-modal-actions">
+        <button class="btn btn-primary preview-start-btn" id="previewStartBtn">
+          Start Level
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

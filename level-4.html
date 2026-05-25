@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level 4 - Mini Projects | Codixify</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="animated-bg"></div>
+
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" role="navigation">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <span class="logo-icon">C</span>
+        <span class="logo-text">Codixify</span>
+      </a>
+      <div class="navbar-links">
+        <a href="index.html">Home</a>
+        <a href="html-levels.html" class="active">Levels</a>
+        <a href="index.html#about">About</a>
+      </div>
+      <button class="navbar-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== LEVEL PAGE WRAPPER ===== -->
+  <div class="level-page">
+
+    <!-- ===== LEVEL HEADER ===== -->
+    <div class="level-header">
+      <div class="level-title">
+        <span class="logo-icon" style="width:28px;height:28px;font-size:0.7rem;">C</span>
+        Mini Projects
+        <span class="level-badge">Level 4</span>
+      </div>
+      <div class="level-actions">
+        <a href="html-levels.html" class="btn-back-home">← Back to Levels</a>
+      </div>
+    </div>
+
+    <!-- ===== LESSON TOOLBAR ===== -->
+    <div class="lesson-toolbar">
+      <div class="toolbar-left">
+        <button class="toolbar-btn toolbar-back" id="backBtn" disabled>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Back
+        </button>
+      </div>
+      <div class="toolbar-center">
+        <span class="toolbar-step-title" id="toolbarStepTitle">Start Your Profile Card</span>
+        <div class="toolbar-step-meta">
+          <span class="toolbar-step-badge" id="stepIndicator">Step 1 of 50</span>
+          <div class="toolbar-progress-dots" id="progressDots"></div>
+        </div>
+      </div>
+      <div class="toolbar-right">
+        <button class="toolbar-btn toolbar-run" id="runBtn">▶ Run</button>
+        <button class="toolbar-btn toolbar-clear" id="clearBtn">✕ Clear</button>
+        <button class="toolbar-btn toolbar-next" id="nextBtn" disabled>
+          Next Step
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ===== TOP FEEDBACK BAR ===== -->
+    <div class="validation-area">
+      <div class="validation-message hidden" id="validationMessage"></div>
+    </div>
+
+    <!-- ===== MOBILE TABS ===== -->
+    <div class="mobile-tabs">
+      <button class="mobile-tab-btn active" data-tab="instructions">Instructions</button>
+      <button class="mobile-tab-btn" data-tab="code">Code</button>
+      <button class="mobile-tab-btn" data-tab="preview">Preview</button>
+    </div>
+
+    <!-- ===== LEVEL LAYOUT ===== -->
+    <div class="level-layout" id="levelApp" data-level="4">
+
+      <!-- Instructions Panel -->
+      <div class="panel instructions-panel active" id="instructionsPanel">
+        <!-- Dynamically populated by script.js -->
+      </div>
+
+      <!-- Editor Panel -->
+      <div class="panel editor-panel">
+        <div class="editor-label">
+          <span class="file-tab">
+            <span class="dot"></span>
+            index.html
+          </span>
+        </div>
+        <div class="editor-wrapper">
+          <div class="line-numbers" id="lineNumbers"></div>
+          <textarea id="codeEditor" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Write your HTML code here..."></textarea>
+        </div>
+      </div>
+
+      <!-- Preview Panel -->
+      <div class="panel preview-panel">
+        <div class="preview-header">
+          <span class="preview-label">Live Preview</span>
+          <div class="preview-actions">
+            <span class="preview-dot"></span>
+            <span class="preview-dot"></span>
+            <span class="preview-dot"></span>
+          </div>
+        </div>
+        <div class="preview-frame">
+          <iframe id="previewFrame" title="Live Preview" sandbox="allow-scripts allow-modals allow-same-origin"></iframe>
+        </div>
+        </div>
+
+    </div>
+
+    <!-- ===== COMPLETION OVERLAY ===== -->
+    <div class="completion-overlay" id="completionOverlay">
+      <div class="completion-card">
+        <div class="trophy">🏆</div>
+        <h2>Level Complete!</h2>
+        <p>
+          Congratulations! You've successfully completed Level 4 — Mini Projects.
+          You built a Personal Profile Card, a Blog Layout, a Portfolio Website, and a Product Landing Page from scratch!
+        </p>
+        <div class="completion-stats">
+          <div class="stat-item">
+            <div class="stat-value">50</div>
+            <div class="stat-label">Lessons</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">4</div>
+            <div class="stat-label">Level</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">HTML</div>
+            <div class="stat-label">Language</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+          <a href="level-4.html" class="btn btn-primary">Replay Level</a>
+          <a href="html-levels.html" class="btn btn-secondary completion-close">Back to Levels</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

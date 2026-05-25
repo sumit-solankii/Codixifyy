@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Codixify - Learn Coding by Building Real Projects</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="animated-bg"></div>
+
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" role="navigation">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <span class="logo-icon">C</span>
+        <span class="logo-text">Codixify</span>
+      </a>
+      <div class="navbar-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="html-levels.html">Levels</a>
+        <a href="#about">About</a>
+      </div>
+      <button class="navbar-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="dot"></span>
+          Live Interactive Learning
+        </div>
+        <h1 class="hero-title">
+          Learn Coding by
+          <span class="gradient-text">Building Real</span>
+          <span class="block-display gradient-text">Projects</span>
+        </h1>
+        <p class="hero-description">
+          Master HTML, CSS, and JavaScript through hands-on lessons with a futuristic interactive code editor. No setup required — just write code and see results instantly.
+        </p>
+        <div class="hero-buttons">
+          <a href="html-levels.html" class="btn btn-primary">
+            Start Learning
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#tech" class="btn btn-secondary">
+            Explore Levels
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="code-illustration">
+          <div class="editor-header">
+            <span class="editor-dot"></span>
+            <span class="editor-dot"></span>
+            <span class="editor-dot"></span>
+            <span class="editor-tab">index.html</span>
+          </div>
+          <div class="code-line"><span class="hl-blue">&lt;!DOCTYPE html&gt;</span></div>
+          <div class="code-line"><span class="hl-purple">&lt;html</span> <span class="hl-cyan">lang=</span><span class="hl-green">"en"</span><span class="hl-purple">&gt;</span></div>
+          <div class="code-line"><span class="hl-purple">&lt;head&gt;</span></div>
+          <div class="code-line"><span class="indent-1"><span class="hl-purple">&lt;title&gt;</span><span class="hl-white">Codixify</span><span class="hl-purple">&lt;/title&gt;</span></span></div>
+          <div class="code-line"><span class="indent-1"><span class="hl-purple">&lt;/head&gt;</span></span></div>
+          <div class="code-line"><span class="hl-purple">&lt;body&gt;</span></div>
+          <div class="code-line"><span class="indent-1"><span class="hl-purple">&lt;h1&gt;</span><span class="hl-white">Hello, World!</span><span class="hl-purple">&lt;/h1&gt;</span></span></div>
+          <div class="code-line"><span class="indent-1"><span class="hl-purple">&lt;p&gt;</span><span class="hl-white">Welcome to the future of learning.</span><span class="hl-purple">&lt;/p&gt;</span></span></div>
+          <div class="code-line"><span class="hl-purple">&lt;/body&gt;</span></div>
+          <div class="code-line"><span class="hl-purple">&lt;/html&gt;</span></div>
+          <div class="code-line"><span class="hl-dim">&lt;!-- 🚀 Ready to build --&gt;</span><span class="cursor-blink"></span></div>
+        </div>
+
+        <div class="floating-elements">
+          <span class="float-el">&lt;div&gt;</span>
+          <span class="float-el">{ display: flex; }</span>
+          <span class="float-el">console.log()</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TECHNOLOGY SECTION ===== -->
+  <section class="tech-section" id="tech">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Technologies</div>
+        <h2 class="section-title">Choose Your Path</h2>
+        <p class="section-subtitle">
+          Start with the fundamentals and build your way up to modern web development.
+        </p>
+      </div>
+
+      <div class="tech-grid">
+        <div class="tech-card html-card" onclick="window.location.href='html-levels.html'">
+          <div class="card-glow"></div>
+          <div class="card-icon">
+            <span class="icon-bracket">&lt;/&gt;</span>
+          </div>
+          <h3 class="card-title">HTML</h3>
+          <p class="card-description">
+            Learn the structure of the web. Build pages with headings, paragraphs, images, links, and more.
+          </p>
+          <span class="card-link">
+            Start learning <span class="arrow">→</span>
+          </span>
+        </div>
+
+        <div class="tech-card css-card" onclick="alert('CSS lessons coming soon! Start with HTML first.')">
+          <div class="card-glow"></div>
+          <div class="card-icon">
+            <span class="icon-bracket">#</span>
+          </div>
+          <h3 class="card-title">CSS</h3>
+          <p class="card-description">
+            Master styling and layout. Create beautiful designs with colors, fonts, flexbox, and grid.
+          </p>
+          <span class="card-link">
+            Coming soon <span class="arrow">→</span>
+          </span>
+        </div>
+
+        <div class="tech-card js-card" onclick="alert('JavaScript lessons coming soon! Start with HTML first.')">
+          <div class="card-glow"></div>
+          <div class="card-icon">
+            <span class="icon-bracket">{ }</span>
+          </div>
+          <h3 class="card-title">JavaScript</h3>
+          <p class="card-description">
+            Bring your pages to life. Learn functions, events, DOM manipulation, and interactive features.
+          </p>
+          <span class="card-link">
+            Coming soon <span class="arrow">→</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section class="tech-section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">About</div>
+        <h2 class="section-title">The Future of Learning Code</h2>
+        <p class="section-subtitle">
+          Codixify is a modern, interactive platform designed to make coding accessible to everyone. No downloads, no setup — just your browser and your curiosity.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <p>Built with <span class="footer-brand">Codixify</span> &mdash; The Future of Learning</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
