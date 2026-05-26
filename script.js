@@ -2196,9 +2196,20 @@ document.addEventListener('DOMContentLoaded', function () {
             : '');
       }
 
-      var restoreCode = state.savedCodes.hasOwnProperty(index)
-        ? state.savedCodes[index]
-        : step.startingCode;
+      var restoreCode;
+      if (state.savedCodes.hasOwnProperty(index)) {
+        restoreCode = state.savedCodes[index];
+      } else if (levelId === '1' && index > 0 && index <= 4) {
+        for (var i = index - 1; i >= 0; i--) {
+          if (state.savedCodes.hasOwnProperty(i)) {
+            restoreCode = state.savedCodes[i];
+            break;
+          }
+        }
+        if (restoreCode === undefined) restoreCode = step.startingCode;
+      } else {
+        restoreCode = step.startingCode;
+      }
       state.code = restoreCode;
       if (codeEditor) {
         codeEditor.value = restoreCode;
