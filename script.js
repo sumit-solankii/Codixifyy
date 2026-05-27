@@ -86,6 +86,30 @@ document.addEventListener('DOMContentLoaded', function () {
     },
   };
 
+  /* ===== CSS LEVEL META ===== */
+  var cssLevelMeta = {
+    'css-1': { title: 'Introduction to CSS', badge: 'Level 1', description: 'Learn what CSS is and how it works. Understand inline, internal, and external stylesheets. Write your first CSS rules and selectors.', difficulty: 'Beginner', time: '~30 minutes', lessons: 10, levelUrl: '#' },
+    'css-2': { title: 'Colors & Backgrounds', badge: 'Level 2', description: 'Master color properties in CSS. Work with named colors, hex codes, RGB, HSL, and gradients. Style backgrounds with colors, images, and gradient overlays.', difficulty: 'Beginner', time: '~30 minutes', lessons: 10, levelUrl: '#' },
+    'css-3': { title: 'Typography & Fonts', badge: 'Level 3', description: 'Style text like a pro. Learn font families, sizes, weights, line heights, letter spacing, and text alignment. Import Google Fonts and create beautiful typography.', difficulty: 'Beginner', time: '~30 minutes', lessons: 10, levelUrl: '#' },
+    'css-4': { title: 'Margins & Padding', badge: 'Level 4', description: 'Understand the CSS box model. Control spacing around and inside elements with margins and padding. Master shorthand properties for clean layouts.', difficulty: 'Beginner', time: '~30 minutes', lessons: 10, levelUrl: '#' },
+    'css-5': { title: 'Borders & Shadows', badge: 'Level 5', description: 'Add depth and definition to your elements. Create custom borders, rounded corners, and box shadows. Layer multiple shadows for realistic 3D effects.', difficulty: 'Beginner', time: '~30 minutes', lessons: 10, levelUrl: '#' },
+    'css-6': { title: 'Buttons & Hover Effects', badge: 'Level 6', description: 'Design interactive buttons with hover, focus, and active states. Create smooth transitions, glowing effects, and custom button styles.', difficulty: 'Intermediate', time: '~45 minutes', lessons: 12, levelUrl: '#' },
+    'css-7': { title: 'CSS Display & Position', badge: 'Level 7', description: 'Control element display and positioning. Master display properties and positioning modes including static, relative, absolute, fixed, and sticky.', difficulty: 'Intermediate', time: '~45 minutes', lessons: 12, levelUrl: '#' },
+    'css-8': { title: 'Flexbox Basics', badge: 'Level 8', description: 'Discover the power of Flexbox. Learn axis alignment, justify-content, align-items, flex-direction, and wrap for flexible responsive layouts.', difficulty: 'Intermediate', time: '~45 minutes', lessons: 12, levelUrl: '#' },
+    'css-9': { title: 'Advanced Flexbox Layouts', badge: 'Level 9', description: 'Take Flexbox further with flex-grow, flex-shrink, flex-basis, and order. Build complex navigation and card layouts.', difficulty: 'Intermediate', time: '~45 minutes', lessons: 14, levelUrl: '#' },
+    'css-10': { title: 'CSS Grid Basics', badge: 'Level 10', description: 'Learn CSS Grid, the most powerful layout system. Define rows, columns, grid-template, gap, and create two-dimensional layouts.', difficulty: 'Intermediate', time: '~45 minutes', lessons: 14, levelUrl: '#' },
+    'css-11': { title: 'Responsive Design', badge: 'Level 11', description: 'Make websites look great on any device. Learn responsive units, fluid layouts, max-width techniques, and mobile-first design.', difficulty: 'Intermediate', time: '~45 minutes', lessons: 12, levelUrl: '#' },
+    'css-12': { title: 'Media Queries', badge: 'Level 12', description: 'Master breakpoints and responsive breakpoints. Write media queries for mobile, tablet, and desktop with adaptive layouts.', difficulty: 'Intermediate', time: '~45 minutes', lessons: 12, levelUrl: '#' },
+    'css-13': { title: 'Modern Navigation Bars', badge: 'Level 13', description: 'Build professional navigation systems with horizontal navbars, sticky headers, mobile hamburger menus, dropdowns, and mega menus.', difficulty: 'Advanced', time: '~60 minutes', lessons: 14, levelUrl: '#' },
+    'css-14': { title: 'Hero Sections', badge: 'Level 14', description: 'Design stunning hero sections with full-screen backgrounds, typography overlays, gradient masks, CTA buttons, and scroll indicators.', difficulty: 'Advanced', time: '~60 minutes', lessons: 14, levelUrl: '#' },
+    'css-15': { title: 'Cards & Components', badge: 'Level 15', description: 'Build reusable UI components including profile cards, pricing cards, feature grids, testimonials, stat counters, and alert banners.', difficulty: 'Advanced', time: '~60 minutes', lessons: 16, levelUrl: '#' },
+    'css-16': { title: 'Animations & Transitions', badge: 'Level 16', description: 'Bring designs to life with CSS transitions, keyframe animations, transforms, hover effects, spinners, fade-ins, and parallax.', difficulty: 'Advanced', time: '~60 minutes', lessons: 16, levelUrl: '#' },
+    'css-17': { title: 'Glassmorphism UI', badge: 'Level 17', description: 'Master modern glassmorphism with backdrop-filter effects, transparency, blur, and neon border accents for premium UI.', difficulty: 'Advanced', time: '~60 minutes', lessons: 16, levelUrl: '#' },
+    'css-18': { title: 'Modern Landing Pages', badge: 'Level 18', description: 'Build complete landing pages combining layout, typography, color, animations, and responsive design into polished, conversion-focused pages.', difficulty: 'Advanced', time: '~60 minutes', lessons: 18, levelUrl: '#' },
+    'css-19': { title: 'Portfolio Website Design', badge: 'Level 19', description: 'Design a stunning developer portfolio with hero, project showcase, skills section, timeline, contact form, and responsive layout.', difficulty: 'Advanced', time: '~60 minutes', lessons: 20, levelUrl: '#' },
+    'css-20': { title: 'Complete Responsive Website Project', badge: 'Level 20', description: 'Build a production-ready responsive website combining every CSS skill — layout, design, animations, and responsiveness — into a real-world final project.', difficulty: 'Advanced', time: '~90 minutes', lessons: 24, levelUrl: '#' },
+  };
+
   /* ===== LEVEL DATA ===== */
   var lessonData = {
 
@@ -1961,7 +1985,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var currentPreviewLevel = null;
 
     window.openLevelPreview = function (levelId) {
-      var meta = levelMeta[levelId];
+      var isCss = typeof levelId === 'string' && levelId.indexOf('css-') === 0;
+      var meta = isCss ? cssLevelMeta[levelId] : levelMeta[levelId];
       if (!meta) return;
       currentPreviewLevel = levelId;
       if (previewStartBtn) previewStartBtn.setAttribute('data-level', levelId);
@@ -1972,17 +1997,24 @@ document.addEventListener('DOMContentLoaded', function () {
       if (previewDifficulty) previewDifficulty.textContent = meta.difficulty;
       if (previewTime) previewTime.textContent = meta.time;
       if (previewLessons) previewLessons.textContent = meta.lessons + ' Lessons';
-      if (previewLevelNum) previewLevelNum.textContent = levelId;
+      if (previewLevelNum) previewLevelNum.textContent = isCss ? levelId.replace('css-', '') : levelId;
 
-      var steps = lessonData[levelId];
-      if (steps && steps.length > 0) {
-        var finalCode = steps[steps.length - 1].startingCode;
-        if (previewFrame) {
-          var doc = previewFrame.contentDocument || previewFrame.contentWindow.document;
-          doc.open();
-          doc.write(finalCode);
-          doc.close();
+      if (!isCss) {
+        var steps = lessonData[levelId];
+        if (steps && steps.length > 0) {
+          var finalCode = steps[steps.length - 1].startingCode;
+          if (previewFrame) {
+            var doc = previewFrame.contentDocument || previewFrame.contentWindow.document;
+            doc.open();
+            doc.write(finalCode);
+            doc.close();
+          }
         }
+      } else if (previewFrame) {
+        var doc = previewFrame.contentDocument || previewFrame.contentWindow.document;
+        doc.open();
+        doc.write('<html><body style="display:flex;align-items:center;justify-content:center;font-family:sans-serif;background:#0a0a1a;color:#64748b;padding:40px;text-align:center;"><div><h2 style="color:#7c3aed;margin-bottom:12px;">' + meta.title + '</h2><p style="color:#94a3b8;">CSS level lessons coming soon. Start with HTML basics first!</p></div></body></html>');
+        doc.close();
       }
 
       previewOverlay.classList.add('active');
@@ -2005,8 +2037,13 @@ document.addEventListener('DOMContentLoaded', function () {
     if (previewStartBtn) {
       previewStartBtn.addEventListener('click', function () {
         var levelId = this.getAttribute('data-level') || currentPreviewLevel;
-        if (levelId && levelMeta[levelId]) {
-          window.location.href = levelMeta[levelId].levelUrl;
+        if (!levelId) return;
+        var isCss = typeof levelId === 'string' && levelId.indexOf('css-') === 0;
+        var meta = isCss ? cssLevelMeta[levelId] : levelMeta[levelId];
+        if (meta && meta.levelUrl && meta.levelUrl !== '#') {
+          window.location.href = meta.levelUrl;
+        } else if (meta) {
+          closeLevelPreview();
         }
       });
     }
@@ -2515,6 +2552,48 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
     }
+
+    /* ===== RESIZE HANDLES ===== */
+    function setupResizeHandles() {
+      var handles = document.querySelectorAll('.resize-handle');
+      if (!handles.length) return;
+
+      handles.forEach(function (handle) {
+        var prevPanel = handle.previousElementSibling;
+        if (!prevPanel) return;
+
+        handle.addEventListener('mousedown', function (e) {
+          e.preventDefault();
+          document.body.classList.add('resizing');
+
+          var startX = e.clientX;
+          var startWidth = prevPanel.getBoundingClientRect().width;
+          var minWidth = 160;
+          var maxWidth = handle.dataset.resize === 'left' ? 600 : 800;
+          var layout = prevPanel.closest('.level-layout');
+          var maxLayoutWidth = layout ? layout.getBoundingClientRect().width - 200 : 9999;
+
+          function onMouseMove(moveE) {
+            var dx = moveE.clientX - startX;
+            var newWidth = startWidth + dx;
+            newWidth = Math.max(minWidth, Math.min(newWidth, maxWidth, maxLayoutWidth));
+            prevPanel.style.width = newWidth + 'px';
+            prevPanel.style.flex = '0 0 ' + newWidth + 'px';
+          }
+
+          function onMouseUp() {
+            document.body.classList.remove('resizing');
+            document.removeEventListener('mousemove', onMouseMove);
+            document.removeEventListener('mouseup', onMouseUp);
+          }
+
+          document.addEventListener('mousemove', onMouseMove);
+          document.addEventListener('mouseup', onMouseUp);
+        });
+      });
+    }
+
+    setupResizeHandles();
 
     /* ===== KICK OFF ===== */
     init();

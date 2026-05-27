@@ -810,9 +810,10 @@ img {
 /* ===== LEVEL-1 PAGE ===== */
 .level-page {
   padding-top: var(--navbar-height);
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .level-header {
@@ -867,9 +868,9 @@ img {
 /* ===== LEVEL LAYOUT ===== */
 .level-layout {
   flex: 1;
-  display: grid;
-  grid-template-columns: 320px 1fr 380px;
-  gap: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
   overflow: hidden;
   min-height: 0;
 }
@@ -877,6 +878,48 @@ img {
 .level-layout .panel {
   overflow-y: auto;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* ===== RESIZE HANDLES ===== */
+.resize-handle {
+  width: 6px;
+  flex-shrink: 0;
+  cursor: col-resize;
+  position: relative;
+  z-index: 10;
+  transition: background 0.2s ease;
+  background: transparent;
+}
+
+.resize-handle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 2px;
+  width: 2px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.06);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.resize-handle:hover::before,
+.resize-handle:active::before {
+  background: var(--neon-blue);
+  box-shadow: 0 0 8px rgba(0, 212, 255, 0.4);
+}
+
+.resize-handle.dragging::before {
+  background: var(--neon-blue);
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.5);
+}
+
+body.resizing {
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: col-resize;
 }
 
 /* ===== INSTRUCTIONS PANEL ===== */
@@ -884,6 +927,8 @@ img {
   background: rgba(10, 10, 26, 0.6);
   border-right: 1px solid rgba(255, 255, 255, 0.05);
   padding: 24px;
+  width: 320px;
+  flex-shrink: 0;
 }
 
 .instructions-panel .step-counter {
@@ -1022,6 +1067,8 @@ img {
   display: flex;
   flex-direction: column;
   min-height: 0;
+  flex: 1 1 0;
+  min-width: 200px;
 }
 
 .editor-wrapper .line-numbers {
@@ -1086,6 +1133,8 @@ img {
   display: flex;
   flex-direction: column;
   min-height: 0;
+  width: 380px;
+  flex-shrink: 0;
 }
 
 .preview-header {
@@ -1705,8 +1754,11 @@ img {
     margin: 0 auto;
   }
 
-  .level-layout {
-    grid-template-columns: 280px 1fr 320px;
+  .instructions-panel {
+    width: 260px;
+  }
+  .preview-panel {
+    width: 300px;
   }
 }
 
@@ -1770,8 +1822,13 @@ img {
     gap: 20px;
   }
 
-  .level-layout {
-    grid-template-columns: 1fr;
+  .level-layout .panel {
+    width: 100% !important;
+    flex: 1 1 0 !important;
+  }
+
+  .resize-handle {
+    display: none !important;
   }
 
   .level-layout .panel {
@@ -2382,4 +2439,105 @@ img {
   font-size: 0.7rem;
   color: var(--text-muted);
   margin-top: 4px;
+}
+
+/* ===== CSS ROADMAP PATH INDICATOR ===== */
+.css-roadmap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin: 0 auto 48px;
+  padding: 0 24px;
+  max-width: 500px;
+}
+
+.roadmap-phase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.phase-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  transition: var(--transition-normal);
+  flex-shrink: 0;
+}
+
+.phase-dot.phase-active {
+  background: var(--neon-blue);
+  border-color: var(--neon-blue);
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.4);
+}
+
+.phase-connector {
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.1));
+  min-width: 40px;
+  margin: 0 8px 26px;
+}
+
+.phase-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* ===== PHASE BREAK DIVIDER ===== */
+.phase-break {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 40px 0;
+  padding: 0 4px;
+}
+
+.phase-break-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.3), transparent);
+}
+
+.phase-break-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--neon-purple);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 6px 20px;
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  border-radius: 100px;
+  background: rgba(124, 58, 237, 0.08);
+  white-space: nowrap;
+}
+
+.phase-break-badge.phase-advanced {
+  color: var(--neon-pink);
+  border-color: rgba(236, 72, 153, 0.2);
+  background: rgba(236, 72, 153, 0.08);
+}
+
+/* ===== RESPONSIVE: CSS LEVELS PAGE ===== */
+@media (max-width: 768px) {
+  .css-roadmap {
+    max-width: 360px;
+  }
+  .phase-connector {
+    min-width: 20px;
+  }
+  .phase-break {
+    margin: 32px 0;
+  }
+  .phase-break-badge {
+    font-size: 0.6rem;
+    padding: 4px 14px;
+  }
 }

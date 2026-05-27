@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Learning Path | Codixify</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="animated-bg"></div>
+
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" role="navigation">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <span class="logo-icon">C</span>
+        <span class="logo-text">Codixify</span>
+      </a>
+      <div class="navbar-links">
+        <a href="index.html">Home</a>
+        <a href="html-levels.html">HTML</a>
+        <a href="css-levels.html" class="active">CSS</a>
+      </div>
+      <button class="navbar-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== CSS LEVELS PAGE ===== -->
+  <div class="levels-page">
+
+    <!-- ===== HERO / HEADER ===== -->
+    <section class="levels-hero">
+      <div class="container">
+        <div class="section-header" style="text-align:center;">
+          <div class="section-label" style="color:var(--neon-purple);">CSS Learning Path</div>
+          <h1 class="section-title">Master Modern CSS</h1>
+          <p class="section-subtitle" style="margin:0 auto;">
+            Learn CSS from fundamentals to advanced layouts. Style beautiful websites, build responsive designs, and create professional-grade UI components through hands-on lessons.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ROADMAP PATH INDICATOR ===== -->
+    <div class="css-roadmap">
+      <div class="roadmap-phase">
+        <span class="phase-dot phase-active"></span>
+        <span class="phase-label">Beginner</span>
+      </div>
+      <span class="phase-connector"></span>
+      <div class="roadmap-phase">
+        <span class="phase-dot"></span>
+        <span class="phase-label">Intermediate</span>
+      </div>
+      <span class="phase-connector"></span>
+      <div class="roadmap-phase">
+        <span class="phase-dot"></span>
+        <span class="phase-label">Advanced</span>
+      </div>
+    </div>
+
+    <!-- ===== LEVEL CARDS ===== -->
+    <div class="levels-container">
+      <div class="level-cards-grid">
+
+        <!-- ===== LEVEL 1 ===== -->
+        <div class="level-card card-available" onclick="openLevelPreview('css-1')">
+          <div class="card-glow"></div>
+
+          <div class="level-card-header">
+            <div class="level-number">1</div>
+            <span class="difficulty-badge beginner">Beginner</span>
+          </div>
+
+          <h3 class="level-card-title">Introduction to CSS</h3>
+
+          <p class="level-card-desc">
+            Learn what CSS is and how it works. Understand inline, internal, and external stylesheets. Write your first CSS rules and selectors to style HTML elements with colors and sizes.
+          </p>
+
+          <div class="level-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%;"></div>
+            </div>
+            <span class="progress-text">0%</span>
+          </div>
+
+          <div class="level-card-footer">
+            <span class="level-lessons">10 Lessons</span>
+            <span class="btn btn-primary btn-sm" style="cursor:pointer;">
+              Start Level
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- ===== LEVEL 2 ===== -->
+        <div class="level-card card-available" onclick="openLevelPreview('css-2')">
+          <div class="card-glow"></div>
+
+          <div class="level-card-header">
+            <div class="level-number">2</div>
+            <span class="difficulty-badge beginner">Beginner</span>
+          </div>
+
+          <h3 class="level-card-title">Colors & Backgrounds</h3>
+
+          <p class="level-card-desc">
+            Master color properties in CSS. Work with named colors, hex codes, RGB, HSL, and gradients. Style backgrounds with colors, images, and gradient overlays to create vibrant pages.
+          </p>
+
+          <div class="level-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%;"></div>
+            </div>
+            <span class="progress-text">0%</span>
+          </div>
+
+          <div class="level-card-footer">
+            <span class="level-lessons">10 Lessons</span>
+            <span class="btn btn-primary btn-sm" style="cursor:pointer;">
+              Start Level
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- ===== LEVEL 3 ===== -->
+        <div class="level-card card-available" onclick="openLevelPreview('css-3')">
+          <div class="card-glow"></div>
+
+          <div class="level-card-header">
+            <div class="level-number">3</div>
+            <span class="difficulty-badge beginner">Beginner</span>
+          </div>
+
+          <h3 class="level-card-title">Typography & Fonts</h3>
+
+          <p class="level-card-desc">
+            Style text like a pro. Learn font families, sizes, weights, line heights, letter spacing, and text alignment. Import Google Fonts and create beautiful typography hierarchies.
+          </p>
+
+          <div class="level-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%;"></div>
+            </div>
+            <span class="progress-text">0%</span>
+          </div>
+
+          <div class="level-card-footer">
+            <span class="level-lessons">10 Lessons</span>
+            <span class="btn btn-primary btn-sm" style="cursor:pointer;">
+              Start Level
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- ===== LEVEL 4 ===== -->
+        <div class="level-card card-available" onclick="openLevelPreview('css-4')">
+          <div class="card-glow"></div>
+
+          <div class="level-card-header">
+            <div class="level-number">4</div>
+            <span class="difficulty-badge beginner">Beginner</span>
+          </div>
+
+          <h3 class="level-card-title">Margins & Padding</h3>
+
+          <p class="level-card-desc">
+            Understand the CSS box model. Control spacing around and inside elements with margins and padding. Master shorthand properties and create clean, well-spaced layouts.
+          </p>
+
+          <div class="level-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%;"></div>
+            </div>
+            <span class="progress-text">0%</span>
+          </div>
+
+          <div class="level-card-footer">
+            <span class="level-lessons">10 Lessons</span>
+            <span class="btn btn-primary btn-sm" style="cursor:pointer;">
+              Start Level
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- ===== LEVEL 5 ===== -->
+        <div class="level-card card-available" onclick="openLevelPreview('css-5')">
+          <div class="card-glow"></div>
+
+          <div class="level-card-header">
+            <div class="level-number">5</div>
+            <span class="difficulty-badge beginner">Beginner</span>
+          </div>
+
+          <h3 class="level-card-title">Borders & Shadows</h3>
+
+          <p class="level-card-desc">
+            Add depth and definition to your elements. Create custom borders, rounded corners, and box shadows. Learn to layer multiple shadows for realistic 3D effects and glowing UI.
+          </p>
+
+          <div class="level-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%;"></div>
+            </div>
+            <span class="progress-text">0%</span>
+          </div>
+
+          <div class="level-card-footer">
+            <span class="level-lessons">10 Lessons</span>
+            <span class="btn btn-primary btn-sm" style="cursor:pointer;">
+              Start Level
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ===== PHASE BREAK - INTERMEDIATE ===== -->
+      <div class="phase-break">
+        <div class="phase-break-line"></div>
+        <div class="phase-break-badge">Intermediate</div>
+        <div class="phase-break-line"></div>
+      </div>
+
+      <div class="level-cards-grid">
+
+        <!-- ===== LEVEL 6 ===== -->
+        <div class="level-card card-available" onclick="openLevelPreview('css-6')">
+          <div class="card-glow"></div>
+
+          <div class="level-card-header">
+            <div class="level-number">6</div>
+            <span class="difficulty-badge intermediate">Intermediate</span>
+          </div>
+
+          <h3 class="level-card-title">Buttons & Hover Effects</h3>
+
+          <p class="level-card-desc">
+            Design interactive buttons with hover, focus, and active states. Create smooth transitions, glowing effects, and custom button styles. Build a complete button component library.
+          </p>
+
+          <div class="level-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%;"></div>
+            </div>
+            <span class="progress-text">0%</span>
+          </div>
+
+          <div class="level-card-footer">
+            <span class="level-lessons">12 Lessons</span>
+            <span class="btn btn-primary btn-sm" style="cursor:pointer;">
+              Start Level
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- ===== LEVEL 7 ===== -->
+        <div class="level-card card-available" onclick="openLevelPreview('css-7')">
+          <div class="card-glow"></div>
+
+          <div class="level-card-header">
+            <div class="level-number">7</div>
+            <span class="difficulty-badge intermediate">Intermediate</span>
+          </div>
+
+          <h3 class="level-card-title">CSS Display & Position</h3>
+
+          <p class="level-card-desc">
+            Control how elements are displayed and positioned. Master display properties (block, inline, inline-block, none) and positioning (static, relative, absolute, fixed, sticky).
+          </p>
+
+          <div class="level-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%;"></div>
+            </div>
+            <span class="progress-text">0%</span>
+          </div>
+
+          <div class="level-card-footer">
+            <span class="level-lessons">12 Lessons</span>
+            <span class="btn btn-primary btn-sm" style="cursor:pointer;">
+              Start Level
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- ===== LEVEL 8 ===== -->
+        <div class="level-card card-available" onclick="openLevelPreview('css-8')">
+          <div class="card-glow"></div>
+
+          <div class="level-card-header">
+            <div class="level-number">8</div>
+            <span class="difficulty-badge intermediate">Intermediate</span>
+          </div>
+
+          <h3 class="level-card-title">Flexbox Basics</h3>
+
+          <p class="level-card-desc">
+            Discover the power of Flexbox. Learn main axis and cross axis alignment, justify-content, align-items, flex-direction, and wrap. Build flexible, responsive layouts with ease.
+          </p>
+
+          <div class="level-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%;"></div>
+            </div>
+            <span class="progress-text">0%</span>
+          </div>
+
+          <div class="level-card-footer">
+            <span class="level-lessons">12 Lessons</span>
+            <span class="btn btn-primary btn-sm" style="cursor:pointer;">
+              Start Level
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- ===== LEVEL 9 ===== -->
+        <div class="level-card card-available" onclick="openLevelPreview('css-9')">
+          <div class="card-glow"></div>
+
+          <div class="level-card-header">
+            <div class="level-number">9</div>
+            <span class="difficulty-badge intermediate">Intermediate</span>
+          </div>
+
+          <h3 class="level-card-title">Advanced Flexbox Layouts</h3>
+
+          <p class="level-card-desc">
+            Take Flexbox further. Build complex layouts with flex-grow, flex-shrink, flex-basis, and order. Create navigation bars, card grids, centering techniques, and holy grail layouts.
+          </p>
+
+          <div class="level-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%;"></div>
+            </div>
+            <span class="progress-text">0%</span>
+          </div>
+
+          <div class="level-card-footer">
+            <span class="level-lessons">14 Lessons</span>
+            <span class="btn btn-primary btn-sm" style="cursor:pointer;">
+              Start Level
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- ===== LEVEL 10 ===== -->
+        <div class="level-card card-available" onclick="openLevelPreview('css-10')">
+          <div class="card-glow"></div>
+
+          <div class="level-card-header">
+            <div class="level-number">10</div>
+            <span class="difficulty-badge intermediate">Intermediate</span>
+          </div>
+
+          <h3 class="level-card-title">CSS Grid Basics</h3>
+
+          <p class="level-card-desc">
+            Learn CSS Grid, the most powerful layout system. Define rows and columns, use grid-template, gap, and track sizing. Create two-dimensional layouts that Flexbox cannot achieve.
+          </p>
+
+          <div class="level-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%;"></div>
+            </div>
+            <span class="progress-text">0%</span>
+          </div>
+
+          <div class="level-card-footer">
+            <span class="level-lessons">14 Lessons</span>
+            <span class="btn btn-primary btn-sm" style="cursor:pointer;">
+              Start Level
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- ===== LEVEL 11 ===== -->
+        <div class="level-card card-available" onclick="openLevelPreview('css-11')">
+          <div class="card-glow"></div>
+
+          <div class="level-card-header">
+            <div class="level-number">11</div>
+            <span class="difficulty-badge intermediate">Intermediate</span>
+          </div>
+
+          <h3 class="level-card-title">Responsive Design</h3>
+
+          <p class="level-card-desc">
+            Make your websites look great on any device. Learn responsive units (%, rem, em, vw, vh), fluid layouts, max-width techniques, and mobile-first design principles.
+          </p>
+
+          <div class="level-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%;"></div>
+            </div>
+            <span class="progress-text">0%</span>
+          </div>
+
+          <div class="level-card-footer">
+            <span class="level-lessons">12 Lessons</span>
+            <span class="btn btn-primary btn-sm" style="cursor:pointer;">
+              Start Level
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- ===== LEVEL 12 ===== -->
+        <div class="level-card card-available" onclick="openLevelPreview('css-12')">
+          <div class="card-glow"></div>
+
+          <div class="level-card-header">
+            <div class="level-number">12</div>
+            <span class="difficulty-badge intermediate">Intermediate</span>
+          </div>
+
+          <h3 class="level-card-title">Media Queries</h3>
+
+          <p class="level-card-desc">
+            Master breakpoints and responsive breakpoints. Write media queries for mobile, tablet, and desktop. Build adaptive layouts that rearrange and resize based on screen width.
+          </p>
+
+          <div class="level-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%;"></div>
+            </div>
+            <span class="progress-text">0%</span>
+          </div>
+
+          <div class="level-card-footer">
+            <span class="level-lessons">12 Lessons</span>
+            <span class="btn btn-primary btn-sm" style="cursor:pointer;">
+              Start Level
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ===== PHASE BREAK - ADVANCED ===== -->
+      <div class="phase-break">
+        <div class="phase-break-line"></div>
+        <div class="phase-break-badge phase-advanced">Advanced</div>
+        <div class="phase-break-line"></div>
+      </div>
+
+      <div class="level-cards-grid">
+
+        <!-- ===== LEVEL 13 ===== -->
+        <div class="level-card card-available" onclick="openLevelPreview('css-13')">
+          <div class="card-glow"></div>
+
+          <div class="level-card-header">
+            <div class="level-number">13</div>
+            <span class="difficulty-badge advanced">Advanced</span>
+          </div>
+
+          <h3 class="level-card-title">Modern Navigation Bars</h3>
+
+          <p class="level-card-desc">
+            Build professional navigation systems. Create horizontal navbars, sticky headers, mobile hamburger menus, dropdowns, and mega menus with pure CSS.
+          </p>
+
+          <div class="level-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%;"></div>
+            </div>
+            <span class="progress-text">0%</span>
+          </div>
+
+          <div class="level-card-footer">
+            <span class="level-lessons">14 Lessons</span>
+            <span class="btn btn-primary btn-sm" style="cursor:pointer;">
+              Start Level
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- ===== LEVEL 14 ===== -->
+        <div class="level-card card-available" onclick="openLevelPreview('css-14')">
+          <div class="card-glow"></div>
+
+          <div class="level-card-header">
+            <div class="level-number">14</div>
+            <span class="difficulty-badge advanced">Advanced</span>
+          </div>
+
+          <h3 class="level-card-title">Hero Sections</h3>
+
+          <p class="level-card-desc">
+            Design stunning hero sections that grab attention. Combine full-screen backgrounds, typography overlays, gradient masks, CTA buttons, and scroll indicators.
+          </p>
+
+          <div class="level-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%;"></div>
+            </div>
+            <span class="progress-text">0%</span>
+          </div>
+
+          <div class="level-card-footer">
+            <span class="level-lessons">14 Lessons</span>
+            <span class="btn btn-primary btn-sm" style="cursor:pointer;">
+              Start Level
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- ===== LEVEL 15 ===== -->
+        <div class="level-card card-available" onclick="openLevelPreview('css-15')">
+          <div class="card-glow"></div>
+
+          <div class="level-card-header">
+            <div class="level-number">15</div>
+            <span class="difficulty-badge advanced">Advanced</span>
+          </div>
+
+          <h3 class="level-card-title">Cards & Components</h3>
+
+          <p class="level-card-desc">
+            Build reusable UI components. Design profile cards, pricing cards, feature grids, testimonial cards, stat counters, and alert banners with clean, maintainable CSS.
+          </p>
+
+          <div class="level-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%;"></div>
+            </div>
+            <span class="progress-text">0%</span>
+          </div>
+
+          <div class="level-card-footer">
+            <span class="level-lessons">16 Lessons</span>
+            <span class="btn btn-primary btn-sm" style="cursor:pointer;">
+              Start Level
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- ===== LEVEL 16 ===== -->
+        <div class="level-card card-available" onclick="openLevelPreview('css-16')">
+          <div class="card-glow"></div>
+
+          <div class="level-card-header">
+            <div class="level-number">16</div>
+            <span class="difficulty-badge advanced">Advanced</span>
+          </div>
+
+          <h3 class="level-card-title">Animations & Transitions</h3>
+
+          <p class="level-card-desc">
+            Bring your designs to life. Create smooth CSS transitions, keyframe animations, transforms, and hover effects. Build loading spinners, fade-ins, slide-ups, and parallax effects.
+          </p>
+
+          <div class="level-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%;"></div>
+            </div>
+            <span class="progress-text">0%</span>
+          </div>
+
+          <div class="level-card-footer">
+            <span class="level-lessons">16 Lessons</span>
+            <span class="btn btn-primary btn-sm" style="cursor:pointer;">
+              Start Level
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- ===== LEVEL 17 ===== -->
+        <div class="level-card card-available" onclick="openLevelPreview('css-17')">
+          <div class="card-glow"></div>
+
+          <div class="level-card-header">
+            <div class="level-number">17</div>
+            <span class="difficulty-badge advanced">Advanced</span>
+          </div>
+
+          <h3 class="level-card-title">Glassmorphism UI</h3>
+
+          <p class="level-card-desc">
+            Master the modern glassmorphism design trend. Create frosted glass effects with backdrop-filter, transparency, blur, and neon border accents for premium UI.
+          </p>
+
+          <div class="level-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%;"></div>
+            </div>
+            <span class="progress-text">0%</span>
+          </div>
+
+          <div class="level-card-footer">
+            <span class="level-lessons">16 Lessons</span>
+            <span class="btn btn-primary btn-sm" style="cursor:pointer;">
+              Start Level
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- ===== LEVEL 18 ===== -->
+        <div class="level-card card-available" onclick="openLevelPreview('css-18')">
+          <div class="card-glow"></div>
+
+          <div class="level-card-header">
+            <div class="level-number">18</div>
+            <span class="difficulty-badge advanced">Advanced</span>
+          </div>
+
+          <h3 class="level-card-title">Modern Landing Pages</h3>
+
+          <p class="level-card-desc">
+            Build complete landing pages from scratch. Combine all your CSS skills — layout, typography, color, animations, and responsive design — into polished, conversion-focused pages.
+          </p>
+
+          <div class="level-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%;"></div>
+            </div>
+            <span class="progress-text">0%</span>
+          </div>
+
+          <div class="level-card-footer">
+            <span class="level-lessons">18 Lessons</span>
+            <span class="btn btn-primary btn-sm" style="cursor:pointer;">
+              Start Level
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- ===== LEVEL 19 ===== -->
+        <div class="level-card card-available" onclick="openLevelPreview('css-19')">
+          <div class="card-glow"></div>
+
+          <div class="level-card-header">
+            <div class="level-number">19</div>
+            <span class="difficulty-badge advanced">Advanced</span>
+          </div>
+
+          <h3 class="level-card-title">Portfolio Website Design</h3>
+
+          <p class="level-card-desc">
+            Design a stunning developer portfolio. Build a hero, project showcase, skills section, timeline, contact form, and responsive layout that works on every device.
+          </p>
+
+          <div class="level-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%;"></div>
+            </div>
+            <span class="progress-text">0%</span>
+          </div>
+
+          <div class="level-card-footer">
+            <span class="level-lessons">20 Lessons</span>
+            <span class="btn btn-primary btn-sm" style="cursor:pointer;">
+              Start Level
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+        <!-- ===== LEVEL 20 ===== -->
+        <div class="level-card card-available" onclick="openLevelPreview('css-20')" style="border-color:rgba(124,58,237,0.25);">
+          <div class="card-glow"></div>
+
+          <div class="level-card-header">
+            <div class="level-number" style="background:linear-gradient(135deg,var(--neon-purple),var(--neon-pink));">20</div>
+            <span class="difficulty-badge advanced">Advanced</span>
+          </div>
+
+          <h3 class="level-card-title" style="color:var(--neon-purple);">Complete Responsive Website Project</h3>
+
+          <p class="level-card-desc">
+            Build a complete, production-ready responsive website from scratch. Combine every CSS skill you learned — layout, design, animations, and responsiveness — into a real-world final project.
+          </p>
+
+          <div class="level-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 0%;"></div>
+            </div>
+            <span class="progress-text">0%</span>
+          </div>
+
+          <div class="level-card-footer">
+            <span class="level-lessons">24 Lessons</span>
+            <span class="btn btn-primary btn-sm" style="cursor:pointer;">
+              Start Level
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== LEVEL PREVIEW MODAL ===== -->
+  <div class="level-preview-overlay" id="levelPreviewOverlay">
+    <div class="level-preview-modal">
+      <button class="preview-modal-close" id="previewClose" aria-label="Close">✕</button>
+
+      <div class="preview-modal-top">
+        <div class="preview-level-circle" id="previewLevelNum">1</div>
+        <span class="preview-modal-badge" id="previewBadge">Level 1</span>
+      </div>
+
+      <h2 class="preview-modal-title" id="previewTitle">Introduction to CSS</h2>
+
+      <p class="preview-modal-desc" id="previewDesc">Learn the foundations of CSS and how to style HTML elements.</p>
+
+      <div class="preview-modal-meta">
+        <span class="preview-meta-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <span id="previewTime">~30 minutes</span>
+        </span>
+        <span class="preview-meta-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c6 3 10 0 12-2v-5"/></svg>
+          <span id="previewLessons">10 Lessons</span>
+        </span>
+        <span class="preview-meta-item">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span id="previewDifficulty">Beginner</span>
+        </span>
+      </div>
+
+      <div class="preview-modal-output">
+        <div class="preview-output-label">Final Output Preview</div>
+        <div class="preview-output-frame-wrap">
+          <iframe class="preview-output-frame" id="previewOutputFrame" title="Level Preview"></iframe>
+        </div>
+      </div>
+
+      <div class="preview-modal-actions">
+        <button class="btn btn-primary preview-start-btn" id="previewStartBtn">
+          Start Level
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
