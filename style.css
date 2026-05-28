@@ -480,8 +480,9 @@ img {
 }
 
 .btn-sm {
-  padding: 10px 20px;
-  font-size: 0.85rem;
+  padding: 7px 16px;
+  font-size: 0.8rem;
+  gap: 6px;
 }
 
 /* ===== HERO CODE ILLUSTRATION ===== */
@@ -1978,6 +1979,12 @@ body.resizing {
   .validation-area {
     padding: 0 16px;
   }
+
+  .btn-sm {
+    padding: 6px 14px;
+    font-size: 0.75rem;
+    gap: 4px;
+  }
 }
 
 /* ===== HTML LEVELS PAGE (html-levels.html) ===== */
@@ -2158,6 +2165,9 @@ body.resizing {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 12px;
+  gap: 12px;
+  flex-wrap: wrap;
   position: relative;
   z-index: 1;
 }
@@ -2165,6 +2175,7 @@ body.resizing {
 .level-lessons {
   font-size: 0.85rem;
   color: var(--text-muted);
+  white-space: nowrap;
 }
 
 /* ===== LEVEL PREVIEW MODAL ===== */
