@@ -1,0 +1,162 @@
+{
+  "1": {
+    "desc": "<strong>Kick off your portfolio</strong> by adding an <code>&lt;h1&gt;</code> element with the text \"My Portfolio\". The <code>&lt;h1&gt;</code> tag represents the most important heading on your page and helps search engines understand your site's main topic. Every website you visit uses heading tags (<code>h1</code>–<code>h6</code>) to structure content clearly for both users and screen readers.",
+    "tip": "Always use exactly one <code>&lt;h1&gt;</code> per page for SEO best practices."
+  },
+  "2": {
+    "desc": "Add a <code>&lt;p&gt;</code> (paragraph) tag beneath your heading with a warm welcome message like \"Welcome to my personal portfolio!\". Paragraphs are the <strong>building blocks of web content</strong> and are used everywhere — from blog posts to product descriptions — to present readable text to visitors.",
+    "tip": "Keep your welcome message short and friendly — first impressions matter!"
+  },
+  "3": {
+    "desc": "Insert an <code>&lt;img&gt;</code> tag to display your profile picture. The <code>src</code> attribute specifies the image file path or URL, while the <code>alt</code> attribute provides <strong>alternative text for accessibility</strong> and shows when the image fails to load. Real-world sites like LinkedIn and GitHub use profile images to build trust and personal connection.",
+    "tip": "Always include a descriptive <code>alt</code> attribute — it helps screen readers and improves SEO."
+  },
+  "4": {
+    "desc": "Create a <code>&lt;nav&gt;</code> element containing anchor (<code>&lt;a&gt;</code>) links for Home, About, Skills, and Contact. The <code>&lt;nav&gt;</code> tag <strong>semantically marks navigation</strong>, making your site more accessible and machine-readable. Every multi-page site uses navigation menus to help users quickly jump between sections.",
+    "tip": "Use <code>href=\"#section-id\"</code> to link to sections on the same page."
+  },
+  "5": {
+    "desc": "Wrap your home content in a <code>&lt;section id=\"home\"&gt;</code> element. The <code>&lt;section&gt;</code> tag <strong>groups related content thematically</strong>, improving both readability and accessibility. Large sites like GitHub and Dev.to use sections to organize their pages into logical blocks that are easier to style and navigate.",
+    "tip": "Use <code>id</code> attributes on your sections — they act as anchor targets for navigation links."
+  },
+  "6": {
+    "desc": "Add a <code>&lt;section id=\"about\"&gt;</code> with an <code>&lt;h2&gt;</code> heading and a paragraph telling visitors about yourself. The <code>&lt;h2&gt;</code> tag creates a <strong>second-level heading</strong>, which helps establish a clear content hierarchy. Portfolio sites, resumes, and personal blogs all use \"About\" sections to introduce who you are and what you do.",
+    "tip": "Write your About paragraph in first-person — it feels more personal and engaging."
+  },
+  "7": {
+    "desc": "Add a <code>&lt;style&gt;</code> tag in your <code>&lt;head&gt;</code> and set <code>body { background-color: #f0f4f8; }</code>. CSS (Cascading Style Sheets) controls <strong>every visual aspect of your page</strong>, starting with the background. Companies use background colors to establish brand identity — think of Facebook's light gray or Stripe's signature blue backdrop.",
+    "tip": "The <code>&lt;style&gt;</code> tag belongs inside the <code>&lt;head&gt;</code> of your HTML document."
+  },
+  "8": {
+    "desc": "Add <code>font-family: 'Segoe UI', Tahoma, sans-serif;</code> to your <code>body</code> selector. The <code>font-family</code> property defines <strong>which typeface your text uses</strong>, and providing fallback fonts ensures your page looks good even when a specific font isn't available. Google, Medium, and YouTube all carefully choose font stacks for readability and brand consistency.",
+    "tip": "Always list a generic fallback like <code>serif</code> or <code>sans-serif</code> at the end of your font stack."
+  },
+  "9": {
+    "desc": "Set <code>color: #2c3e50;</code> on your <code>h1</code> selector to change the heading text to a dark navy-blue shade. The <code>color</code> property controls text color and is <strong>fundamental to visual hierarchy and branding</strong>. News sites like The New York Times use dark headings to create contrast and draw attention to headlines.",
+    "tip": "Use a <strong>color contrast checker</strong> to ensure your text is readable against the background."
+  },
+  "10": {
+    "desc": "Add <code>font-size: 36px;</code> and <code>text-align: center;</code> to your <code>h1</code> selector. The <code>font-size</code> property <strong>controls the prominence of text</strong>, while <code>text-align</code> determines horizontal alignment. Centered headings are a common design pattern used on landing pages, portfolios, and splash screens to create a strong focal point.",
+    "tip": "Pixels (<code>px</code>) are absolute units — use them for consistent sizing across devices."
+  },
+  "11": {
+    "desc": "Apply <code>font-size: 18px;</code> and <code>line-height: 1.6;</code> to your <code>p</code> selector. The <code>line-height</code> property adds <strong>vertical space between lines of text</strong>, dramatically improving readability. Medium, blogs, and long-form content sites use generous line heights to prevent text from looking cramped and to reduce eye strain.",
+    "tip": "A <code>line-height</code> between 1.5 and 1.8 is considered optimal for body text readability."
+  },
+  "12": {
+    "desc": "Set <code>body { margin: 0; padding: 20px; }</code> to remove the browser's default spacing and add breathing room. The <code>margin</code> property controls space <strong>outside</strong> an element, while <code>padding</code> controls space <strong>inside</strong>. Every professional site resets margins first to ensure consistent rendering across different browsers.",
+    "tip": "Browsers add default margins to <code>&lt;body&gt;</code> — resetting them gives you full control."
+  },
+  "13": {
+    "desc": "Style your <code>h2</code> elements with <code>color: #2c3e50;</code> and <code>font-size: 28px;</code>. Keeping a <strong>consistent typographic scale</strong> across headings creates a professional, cohesive look. Sites like Airbnb and Spotify use carefully sized headings to guide users through their content hierarchy.",
+    "tip": "Match your <code>h2</code> color to the <code>h1</code> color for a unified design system."
+  },
+  "14": {
+    "desc": "Wrap your page content in a <code>&lt;div class=\"container\"&gt;</code> and style it with <code>max-width: 900px; margin: 0 auto;</code>. The <code>max-width</code> limits how wide your content stretches on large screens, and <code>margin: 0 auto</code> <strong>centers the entire container horizontally</strong>. This is the web's most common layout pattern — used by Reddit, Dev.to, and thousands of other sites.",
+    "tip": "The <code>auto</code> value in <code>margin: 0 auto</code> tells the browser to split remaining space equally on both sides."
+  },
+  "15": {
+    "desc": "Style your <code>nav</code> with <code>background: #2c3e50; padding: 15px; text-align: center; border-radius: 8px;</code>. The <code>border-radius</code> property <strong>rounds the corners</strong> of an element, giving it a modern, polished appearance. Navigation bars are the most-used UI component on the web, and rounded corners have become a hallmark of contemporary design.",
+    "tip": "Border-radius values between <code>6px</code> and <code>12px</code> give a subtle modern look without being overly round."
+  },
+  "16": {
+    "desc": "Target <code>nav a</code> with <code>text-decoration: none; color: white; margin: 0 15px; font-weight: 600;</code>. The <code>text-decoration: none</code> removes the default underline from links, while <code>font-weight: 600</code> gives them a <strong>semi-bold appearance</strong>. This clean link style is the industry standard — used by GitHub, Twitter, and virtually every modern web app.",
+    "tip": "Use <code>font-weight: 600</code> (semi-bold) instead of <code>bold</code> (700) for a cleaner look."
+  },
+  "17": {
+    "desc": "Add <code>img { width: 150px; height: 150px; border-radius: 50%; display: block; margin: 0 auto; }</code>. Setting <code>border-radius: 50%</code> on a square image <strong>turns it into a perfect circle</strong> — one of the most popular profile picture styles on the web. LinkedIn, Twitter, and Instagram all use circular profile photos for a friendly, uniform appearance.",
+    "tip": "Set <code>display: block; margin: 0 auto;</code> to center the image horizontally within its container."
+  },
+  "18": {
+    "desc": "Target your sections with <code>background: white; padding: 20px; border-radius: 10px; margin-bottom: 20px;</code>. White section backgrounds on a colored page background <strong>create visual cards</strong> that separate content areas. This card-based layout is used everywhere — from Google's Material Design to Trello's boards — because it creates clear content boundaries.",
+    "tip": "Add <code>margin-bottom</code> to sections so they don't stick together — spacing improves readability."
+  },
+  "19": {
+    "desc": "Add <code>box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);</code> to your sections. The <code>box-shadow</code> property <strong>adds depth by casting a shadow</strong> behind an element, making it appear to float above the page. This subtle 3D effect is a cornerstone of modern UI design and is used extensively by Stripe, Notion, and Material Design components.",
+    "tip": "Use <code>rgba()</code> for shadows — the last value (alpha) controls transparency, keeping shadows soft and natural."
+  },
+  "20": {
+    "desc": "Add a <code>&lt;button&gt;</code> with the text \"Learn More About Me\" inside your home section. The <code>&lt;button&gt;</code> element <strong>represents a clickable interactive control</strong> that users can click to trigger an action. Buttons are the most essential interactive element on the web — used for submitting forms, triggering modals, and navigating across every type of website.",
+    "tip": "Use descriptive button text like \"Learn More\" instead of vague text like \"Click Here\" — it's better for accessibility."
+  },
+  "21": {
+    "desc": "Style your button with <code>background: #3498db; color: white; padding: 12px 24px; border: none; border-radius: 6px; font-size: 16px; cursor: pointer;</code>. The <code>cursor: pointer</code> property <strong>changes the mouse cursor to a hand icon</strong>, signaling interactivity. These styles define the modern button aesthetic — seen on call-to-action buttons across Amazon, Spotify, and YouTube.",
+    "tip": "Add <code>border: none</code> to buttons to remove the default browser border that clashes with custom styles."
+  },
+  "22": {
+    "desc": "Add a <code>button:hover</code> rule with <code>background: #2980b9;</code>. The <code>:hover</code> pseudo-class <strong>applies styles when the user hovers their cursor</strong> over an element. Hover effects provide visual feedback that an element is interactive — this is a fundamental UX principle used by every major website to improve user experience.",
+    "tip": "Make the hover color slightly darker than the default for a natural press-down visual effect."
+  },
+  "23": {
+    "desc": "Add <code>border: 4px solid #3498db;</code> to your image selector. The <code>border</code> property <strong>adds a decorative outline around an element</strong>, and applying it to your profile image creates a framed, polished look. Borders are used in profile avatars, product cards, and certificates to draw attention and define boundaries.",
+    "tip": "Match the border color to your button's background color for a cohesive design palette."
+  },
+  "24": {
+    "desc": "Add a <code>&lt;section id=\"skills\"&gt;</code> containing <code>&lt;div class=\"skill\"&gt;</code> elements for HTML, CSS, JavaScript, and Design. Grouping related content in a skills section <strong>showcases your technical abilities</strong> in a structured way. Portfolio and resume websites universally use skills sections to give recruiters a quick overview of a candidate's expertise.",
+    "tip": "Use a <code>&lt;div&gt;</code> with a class for each skill — classes let you style multiple elements identically."
+  },
+  "25": {
+    "desc": "Style <code>.skill</code> with <code>display: inline-block; background: #3498db; color: white; padding: 6px 14px; border-radius: 20px; margin: 4px; font-size: 14px;</code>. The <code>border-radius: 20px</code> creates <strong>pill-shaped badges</strong>, a popular UI pattern for tags and skill labels. GitHub uses pill badges for repository topics, and many job boards display skill tags this way.",
+    "tip": "Use <code>display: inline-block</code> so badges sit side-by-side while still respecting padding and margins."
+  },
+  "26": {
+    "desc": "Add a <code>&lt;section id=\"projects\"&gt;</code> with <code>&lt;div class=\"project-card\"&gt;</code> elements containing project descriptions. Project cards <strong>present your work in a scannable, visual format</strong> that lets visitors quickly assess your experience. Dribbble, Behance, and every portfolio site use project cards to transform bullet-point resumes into engaging visual stories.",
+    "tip": "Start with 2–3 placeholder project cards — you can replace the content with real projects later."
+  },
+  "27": {
+    "desc": "Style <code>.project-card</code> with <code>background: #f8f9fa; padding: 15px; border-left: 5px solid #3498db; border-radius: 8px; margin-bottom: 15px;</code>. The <code>border-left</code> property <strong>adds a colored accent bar</strong> on one side, a common design pattern used in cards, quotes, and notification panels. Medium and Dev.to use left-border accents to highlight featured or related content.",
+    "tip": "A colored left border acts as an accent line — it's a simple way to make cards feel premium without extra graphics."
+  },
+  "28": {
+    "desc": "Add <code>.project-card h3 { margin-top: 0; }</code> to remove excess space above project titles. The <code>margin-top: 0</code> <strong>eliminates unwanted collapsing margins</strong> that browsers add to headings by default. This small but important detail is used by professional UI designers to ensure consistent spacing inside cards and containers.",
+    "tip": "Headings inside cards with <code>margin-top: 0</code> align perfectly with the card's top padding."
+  },
+  "29": {
+    "desc": "Add a <code>&lt;section id=\"contact\"&gt;</code> with a <code>&lt;form&gt;</code> containing <code>&lt;input&gt;</code> fields for name and email, and a <code>&lt;textarea&gt;</code> for messages. Forms are <strong>the primary way users send data to a server</strong> — they power contact pages, sign-ups, checkouts, and search bars across the entire web.",
+    "tip": "Use <code>placeholder</code> attributes on inputs to show example text — it guides users without needing extra labels."
+  },
+  "30": {
+    "desc": "Style <code>input, textarea</code> with <code>width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; margin-bottom: 15px; box-sizing: border-box;</code>. The <code>box-sizing: border-box</code> property <strong>includes padding and border in the element's total width</strong>, preventing layout overflow. This is the single most important CSS trick for building responsive forms and is used by every modern CSS framework.",
+    "tip": "Always add <code>box-sizing: border-box</code> to inputs — otherwise padding pushes them outside their container."
+  },
+  "31": {
+    "desc": "Add <code>button[type=\"submit\"] { width: 100%; }</code> to make your submit button stretch full-width. The <code>button[type=\"submit\"]</code> selector specifically targets buttons used for form submission, and a <strong>full-width button creates a clear, easy-to-click call to action</strong>. This pattern is standard on login pages, checkout forms, and sign-up flows.",
+    "tip": "Use the attribute selector <code>[type=\"submit\"]</code> to target submit buttons without adding a separate class."
+  },
+  "32": {
+    "desc": "Add a <code>&lt;footer&gt;</code> with copyright text like \"&copy; 2026 My Portfolio. All rights reserved.\" The <code>&lt;footer&gt;</code> element <strong>represents the closing section of a page</strong>, typically containing legal info, links, or credits. Almost every website uses a footer — it provides a consistent endpoint for navigation and displays important legal information.",
+    "tip": "Use the <code>&amp;copy;</code> HTML entity to display the copyright symbol (&copy;) correctly."
+  },
+  "33": {
+    "desc": "Style your <code>footer</code> with <code>text-align: center; padding: 20px; color: #7f8c8d; font-size: 14px;</code>. The muted gray color <strong>visually de-emphasizes the footer</strong> so it doesn't compete with main content. This design pattern — smaller, lighter, and centered footer text — is the web standard, used by Apple, Google, and Microsoft.",
+    "tip": "Use a lighter color like <code>#7f8c8d</code> for secondary text — it creates visual hierarchy without being distracting."
+  },
+  "34": {
+    "desc": "Add <code>nav a:hover { color: #3498db; }</code> to change link color on hover. The <code>:hover</code> pseudo-class <strong>provides interactive feedback</strong> by visually distinguishing links when users mouse over them. This hover effect is a universally expected interaction pattern — every site with navigation links changes their appearance on hover.",
+    "tip": "Use your primary brand color for hover effects to create a consistent interactive language across the page."
+  },
+  "35": {
+    "desc": "Add <code>transition: all 0.3s ease;</code> to both <code>button</code> and <code>nav a</code> selectors. The <code>transition</code> property <strong>animates changes between states</strong> over a specified duration, making hover effects feel smooth instead of abrupt. Smooth transitions are a hallmark of polished, professional sites — Apple's website is a prime example of this design philosophy.",
+    "tip": "A <code>0.3s</code> duration is the sweet spot — fast enough to feel responsive, slow enough to be noticeable."
+  },
+  "36": {
+    "desc": "Replace your body's solid background with <code>background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);</code>. The <code>linear-gradient</code> function <strong>creates a smooth color transition</strong> between two or more colors, adding visual richness to your page. Gradient backgrounds are widely used by SaaS products (Stripe, Zoom) to create modern, eye-catching hero sections.",
+    "tip": "The <code>135deg</code> angle creates a diagonal gradient — experiment with angles to find a direction that looks best."
+  },
+  "37": {
+    "desc": "Update your sections with <code>background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.3);</code>. The <code>backdrop-filter: blur()</code> property creates the <strong>glassmorphism effect</strong> — a translucent background that blurs whatever is behind it. This modern aesthetic is used by Apple's macOS, Windows 11, and popular design portfolios to create a sleek, layered look.",
+    "tip": "Glassmorphism works best over gradient or image backgrounds — the contrast makes the glass effect visible."
+  },
+  "38": {
+    "desc": "Add <code>section:hover { transform: translateY(-5px); transition: transform 0.3s ease; }</code> to your section selector. The <code>transform: translateY()</code> property <strong>moves an element vertically</strong>, creating a subtle \"lift\" effect on hover. This micro-interaction adds a layer of polish that makes your page feel dynamic and responsive, similar to animation patterns on Dribbble and Awwwards-winning sites.",
+    "tip": "A <code>-5px</code> upward translation is subtle enough to feel natural but noticeable enough to be delightful."
+  },
+  "39": {
+    "desc": "Add <code>.project-card:hover { transform: translateY(-5px); transition: transform 0.3s ease; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); }</code>. Combining <code>translateY</code> with an enhanced <code>box-shadow</code> <strong>creates a realistic \"card lift\" effect</strong> that mimics physical objects rising when selected. This interaction pattern is used extensively in Material Design and modern UI toolkits to communicate interactivity.",
+    "tip": "Pair <code>translateY</code> with an increased shadow on hover — the two together sell the illusion of depth."
+  },
+  "40": {
+    "desc": "<strong>Congratulations — your Modern Personal Portfolio Website is complete!</strong> You've built a fully responsive, beautifully styled portfolio from scratch, learning <code>HTML</code> structure, <code>CSS</code> styling, layout techniques, hover effects, transitions, gradients, and even glassmorphism. You now have a professional portfolio template that you can customize with your own content and deploy to share with the world.",
+    "tip": "Your next step is to deploy your portfolio using <strong>GitHub Pages</strong> or <strong>Netlify</strong> — both offer free hosting for static sites!"
+  }
+}

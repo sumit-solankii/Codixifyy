@@ -480,9 +480,8 @@ img {
 }
 
 .btn-sm {
-  padding: 7px 16px;
-  font-size: 0.8rem;
-  gap: 6px;
+  padding: 10px 20px;
+  font-size: 0.85rem;
 }
 
 /* ===== HERO CODE ILLUSTRATION ===== */
@@ -811,10 +810,9 @@ img {
 /* ===== LEVEL-1 PAGE ===== */
 .level-page {
   padding-top: var(--navbar-height);
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
 }
 
 .level-header {
@@ -869,9 +867,9 @@ img {
 /* ===== LEVEL LAYOUT ===== */
 .level-layout {
   flex: 1;
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
+  display: grid;
+  grid-template-columns: 320px 4px 1fr 4px 380px;
+  gap: 0;
   overflow: hidden;
   min-height: 0;
 }
@@ -879,48 +877,17 @@ img {
 .level-layout .panel {
   overflow-y: auto;
   overflow-x: hidden;
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
 }
 
-/* ===== RESIZE HANDLES ===== */
 .resize-handle {
-  width: 6px;
-  flex-shrink: 0;
   cursor: col-resize;
-  position: relative;
-  z-index: 10;
-  transition: background 0.2s ease;
   background: transparent;
+  transition: background 0.2s;
+  z-index: 10;
 }
 
-.resize-handle::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 2px;
-  width: 2px;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.06);
-  transition: background 0.2s ease, box-shadow 0.2s ease;
-}
-
-.resize-handle:hover::before,
-.resize-handle:active::before {
-  background: var(--neon-blue);
-  box-shadow: 0 0 8px rgba(0, 212, 255, 0.4);
-}
-
-.resize-handle.dragging::before {
-  background: var(--neon-blue);
-  box-shadow: 0 0 12px rgba(0, 212, 255, 0.5);
-}
-
-body.resizing {
-  user-select: none;
-  -webkit-user-select: none;
-  cursor: col-resize;
+.resize-handle:hover {
+  background: rgba(124, 58, 237, 0.3);
 }
 
 /* ===== INSTRUCTIONS PANEL ===== */
@@ -928,8 +895,6 @@ body.resizing {
   background: rgba(10, 10, 26, 0.6);
   border-right: 1px solid rgba(255, 255, 255, 0.05);
   padding: 24px;
-  width: 320px;
-  flex-shrink: 0;
 }
 
 .instructions-panel .step-counter {
@@ -1068,8 +1033,6 @@ body.resizing {
   display: flex;
   flex-direction: column;
   min-height: 0;
-  flex: 1 1 0;
-  min-width: 200px;
 }
 
 .editor-wrapper .line-numbers {
@@ -1134,8 +1097,6 @@ body.resizing {
   display: flex;
   flex-direction: column;
   min-height: 0;
-  width: 380px;
-  flex-shrink: 0;
 }
 
 .preview-header {
@@ -1411,7 +1372,7 @@ body.resizing {
   line-height: 1.3;
 }
 
-.toolbar-step-meta {
+.toolbar-step-meta { 
   display: flex;
   align-items: center;
   gap: 10px;
@@ -1755,11 +1716,8 @@ body.resizing {
     margin: 0 auto;
   }
 
-  .instructions-panel {
-    width: 260px;
-  }
-  .preview-panel {
-    width: 300px;
+  .level-layout {
+    grid-template-columns: 280px 4px 1fr 4px 320px;
   }
 }
 
@@ -1823,13 +1781,8 @@ body.resizing {
     gap: 20px;
   }
 
-  .level-layout .panel {
-    width: 100% !important;
-    flex: 1 1 0 !important;
-  }
-
-  .resize-handle {
-    display: none !important;
+  .level-layout {
+    grid-template-columns: 1fr;
   }
 
   .level-layout .panel {
@@ -1854,6 +1807,10 @@ body.resizing {
     display: flex;
     flex-direction: column;
     min-height: 60vh;
+  }
+
+  .resize-handle {
+    display: none;
   }
 
   .mobile-tabs {
@@ -1979,12 +1936,6 @@ body.resizing {
   .validation-area {
     padding: 0 16px;
   }
-
-  .btn-sm {
-    padding: 6px 14px;
-    font-size: 0.75rem;
-    gap: 4px;
-  }
 }
 
 /* ===== HTML LEVELS PAGE (html-levels.html) ===== */
@@ -2026,7 +1977,7 @@ body.resizing {
   border-radius: var(--radius-lg);
   padding: 28px 32px;
   transition: var(--transition-normal);
-  overflow: hidden;
+  overflow: hidden;     
 }
 
 .level-card.card-available {
@@ -2165,9 +2116,6 @@ body.resizing {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 12px;
-  gap: 12px;
-  flex-wrap: wrap;
   position: relative;
   z-index: 1;
 }
@@ -2175,7 +2123,6 @@ body.resizing {
 .level-lessons {
   font-size: 0.85rem;
   color: var(--text-muted);
-  white-space: nowrap;
 }
 
 /* ===== LEVEL PREVIEW MODAL ===== */
