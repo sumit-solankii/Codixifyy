@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ===== CSS LEVEL META ===== */
   var cssLevelMeta = {
     'css-1': { title: 'Introduction to CSS', badge: 'Level 1', description: 'Learn what CSS is and how it works. Understand inline, internal, and external stylesheets. Write your first CSS rules and selectors.', difficulty: 'Beginner', time: '~45 minutes', lessons: 40, levelUrl: 'level-1-css.html' },
-    'css-2': { title: 'Colors & Backgrounds', badge: 'Level 2', description: 'Master color properties in CSS. Work with named colors, hex codes, RGB, HSL, and gradients. Style backgrounds with colors, images, and gradient overlays.', difficulty: 'Beginner', time: '~30 minutes', lessons: 10, levelUrl: '#' },
+    'css-2': { title: 'External CSS & Website Styling', badge: 'Level 2', description: 'Learn how professional developers use external CSS files. Build a Coffee Shop Landing Page using separate index.html and style.css files with real-world project structure.', difficulty: 'Beginner', time: '~30 minutes', lessons: 20, levelUrl: 'level-2-css.html' },
     'css-3': { title: 'Typography & Fonts', badge: 'Level 3', description: 'Style text like a pro. Learn font families, sizes, weights, line heights, letter spacing, and text alignment. Import Google Fonts and create beautiful typography.', difficulty: 'Beginner', time: '~30 minutes', lessons: 10, levelUrl: '#' },
     'css-4': { title: 'Margins & Padding', badge: 'Level 4', description: 'Understand the CSS box model. Control spacing around and inside elements with margins and padding. Master shorthand properties for clean layouts.', difficulty: 'Beginner', time: '~30 minutes', lessons: 10, levelUrl: '#' },
     'css-5': { title: 'Borders & Shadows', badge: 'Level 5', description: 'Add depth and definition to your elements. Create custom borders, rounded corners, and box shadows. Layer multiple shadows for realistic 3D effects.', difficulty: 'Beginner', time: '~30 minutes', lessons: 10, levelUrl: '#' },
@@ -2435,6 +2435,290 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     ],
 
+    /* ===== CSS LEVEL 2: EXTERNAL CSS & WEBSITE STYLING (20 steps) ===== */
+    'css-2': [
+      {
+        id: 1,
+        title: "Create your style.css file",
+        file: "style.css",
+        description: "<strong>Start with a CSS file</strong> When building a website, developers keep their CSS in a separate file. This keeps code organized and makes it easy to style multiple pages from one place.",
+        task: "Create your style.css file by adding a CSS comment inside the CSS editor.",
+        tip: "",
+        startingHtml: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Brew &amp; Bean Coffee</title>\n</head>\n<body>\n</body>\n</html>",
+        startingCss: "/* style.css - Coffee Shop Styles */",
+        validate: function(html, css) { return css.indexOf('Coffee Shop Styles') !== -1; },
+        getHint: function(html, css) { return "Add the comment: /* style.css - Coffee Shop Styles */"; },
+        successMsg: "Perfect! You just created your first external CSS file. The /* */ is a CSS comment — it's ignored by the browser but helps developers document their code.",
+        errorMsg: ""
+      },
+      {
+        id: 2,
+        title: "Connect CSS to HTML",
+        file: "index.html",
+        description: "<strong>Link your CSS file</strong> The <code>&lt;link&gt;</code> tag connects your HTML file to your CSS stylesheet. Place it inside the <code>&lt;head&gt;</code> section so the browser loads the styles before rendering the page.",
+        task: "Inside the <head>, add <link rel=\"stylesheet\" href=\"style.css\"> to connect your CSS file.",
+        tip: "",
+        startingHtml: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Brew &amp; Bean Coffee</title>\n</head>\n<body>\n</body>\n</html>",
+        startingCss: "/* style.css - Coffee Shop Styles */",
+        validate: function(html, css) { return html.indexOf('href=\"style.css\"') !== -1; },
+        getHint: function(html, css) { return "Add this line inside head: <link rel=\"stylesheet\" href=\"style.css\">"; },
+        successMsg: "Excellent! The <link> tag tells the browser to load style.css and apply its styles to the HTML page.",
+        errorMsg: ""
+      },
+      {
+        id: 3,
+        title: "Add Coffee Shop Heading",
+        file: "index.html",
+        description: "<strong>Use an HTML heading</strong> The <code>&lt;h1&gt;</code> tag creates the most important heading on your page. Every webpage should have one <code>&lt;h1&gt;</code> that describes the main topic.",
+        task: "Inside <body>, add an <h1> heading with the text \"Brew &amp; Bean Coffee\".",
+        tip: "The &amp; is an HTML entity that displays as & \u2014 it's the correct way to write an ampersand in HTML.",
+        startingHtml: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Brew &amp; Bean Coffee</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n</body>\n</html>",
+        startingCss: "/* style.css - Coffee Shop Styles */",
+        validate: function(html, css) { return html.indexOf('Brew') !== -1 && html.indexOf('Bean') !== -1 && html.indexOf('<h1') !== -1; },
+        getHint: function(html, css) { return "Add this inside the body: <h1>Brew &amp; Bean Coffee</h1>"; },
+        successMsg: "Great! Your coffee shop now has a main heading. The <h1> tag is the most important heading on the page.",
+        errorMsg: ""
+      },
+      {
+        id: 4,
+        title: "Style the Heading Color",
+        file: "style.css",
+        description: "<strong>Change text color with CSS</strong> The <code>color</code> property changes text color. Hex codes like <code>#6B3E2E</code> represent colors using six hexadecimal digits \u2014 perfect for precise branding.",
+        task: "In your CSS, add: h1 { color: #6B3E2E; } to give the heading a rich coffee brown color.",
+        tip: "#6B3E2E is a warm coffee brown color. Hex codes always start with # followed by 6 characters.",
+        startingHtml: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Brew &amp; Bean Coffee</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h1>Brew &amp; Bean Coffee</h1>\n</body>\n</html>",
+        startingCss: "/* style.css - Coffee Shop Styles */",
+        validate: function(html, css) { return css.indexOf('color:') !== -1 && css.indexOf('#6B3E2E') !== -1; },
+        getHint: function(html, css) { return "Add to the CSS: h1 { color: #6B3E2E; }"; },
+        successMsg: "Beautiful! Now your heading has a coffee-themed brown color. The color property changes text color.",
+        errorMsg: ""
+      },
+      {
+        id: 5,
+        title: "Set the Page Background",
+        file: "style.css",
+        description: "<strong>Add a background color</strong> The <code>background-color</code> property fills the entire element with a solid color. For the <code>body</code> element, it covers the whole page behind all content.",
+        task: "Add body { background-color: #F5F0EB; } to give your page a warm cream background.",
+        tip: "background-color fills the entire page behind all your content. Choose colors that complement each other.",
+        startingHtml: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Brew &amp; Bean Coffee</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h1>Brew &amp; Bean Coffee</h1>\n</body>\n</html>",
+        startingCss: "/* style.css - Coffee Shop Styles */\n\nh1 {\n  color: #6B3E2E;\n}",
+        validate: function(html, css) { return css.indexOf('background-color:') !== -1; },
+        getHint: function(html, css) { return "Add to the CSS: body { background-color: #F5F0EB; }"; },
+        successMsg: "Perfect! The warm cream background creates a cozy coffee shop feel. Light backgrounds are easier on the eyes.",
+        errorMsg: ""
+      },
+      {
+        id: 6,
+        title: "Add a Welcome Paragraph",
+        file: "index.html",
+        description: "<strong>Write content with paragraphs</strong> The <code>&lt;p&gt;</code> tag defines a paragraph of text. Paragraphs are the most common way to add readable content to a webpage.",
+        task: "Below the <h1>, add a <p> paragraph: \"Welcome to Brew &amp; Bean, where every cup tells a story. We serve handcrafted coffee made from the finest beans.\"",
+        tip: "",
+        startingHtml: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Brew &amp; Bean Coffee</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h1>Brew &amp; Bean Coffee</h1>\n</body>\n</html>",
+        startingCss: "/* style.css - Coffee Shop Styles */\n\nh1 {\n  color: #6B3E2E;\n}\n\nbody {\n  background-color: #F5F0EB;\n}",
+        validate: function(html, css) { return html.indexOf('<p>') !== -1 && html.indexOf('Welcome to Brew') !== -1; },
+        getHint: function(html, css) { return "After the h1, add: <p>Welcome to Brew &amp; Bean...</p>"; },
+        successMsg: "Great! Paragraphs are the building blocks of web content. Every website uses <p> tags for readable text.",
+        errorMsg: ""
+      },
+      {
+        id: 7,
+        title: "Style the Paragraph",
+        file: "style.css",
+        description: "<strong>Improve text readability</strong> CSS typography properties like <code>font-size</code>, <code>line-height</code>, and <code>color</code> make your text comfortable to read.",
+        task: "Add CSS for paragraphs: p { font-size: 18px; line-height: 1.6; color: #4A3728; }",
+        tip: "line-height controls spacing between lines \u2014 1.6 is ideal for comfortable reading. 18px is a good paragraph size.",
+        startingHtml: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Brew &amp; Bean Coffee</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h1>Brew &amp; Bean Coffee</h1>\n  <p>Welcome to Brew &amp; Bean, where every cup tells a story. We serve handcrafted coffee made from the finest beans.</p>\n</body>\n</html>",
+        startingCss: "/* style.css - Coffee Shop Styles */\n\nh1 {\n  color: #6B3E2E;\n}\n\nbody {\n  background-color: #F5F0EB;\n}",
+        validate: function(html, css) { return css.indexOf('line-height:') !== -1 && css.indexOf('font-size:') !== -1; },
+        getHint: function(html, css) { return "Add to CSS: p { font-size: 18px; line-height: 1.6; color: #4A3728; }"; },
+        successMsg: "Excellent! Now your paragraph is styled for easy reading. Professional websites always carefully set typography.",
+        errorMsg: ""
+      },
+      {
+        id: 8,
+        title: "Add a Coffee Image",
+        file: "index.html",
+        description: "<strong>Display images with HTML</strong> The <code>&lt;img&gt;</code> tag adds images to your page. It uses <code>src</code> for the file path and <code>alt</code> for descriptive text that helps accessibility.",
+        task: "Below the paragraph, add an image: <img src=\"coffee.jpg\" alt=\"Fresh brewed coffee\">",
+        tip: "The src attribute specifies the image file path. The alt attribute provides text for screen readers and when images fail to load.",
+        startingHtml: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Brew &amp; Bean Coffee</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h1>Brew &amp; Bean Coffee</h1>\n  <p>Welcome to Brew &amp; Bean, where every cup tells a story. We serve handcrafted coffee made from the finest beans.</p>\n</body>\n</html>",
+        startingCss: "/* style.css - Coffee Shop Styles */\n\nh1 {\n  color: #6B3E2E;\n}\n\nbody {\n  background-color: #F5F0EB;\n}\n\np {\n  font-size: 18px;\n  line-height: 1.6;\n  color: #4A3728;\n}",
+        validate: function(html, css) { return html.indexOf('<img') !== -1 && html.indexOf('src=\"coffee.jpg\"') !== -1; },
+        getHint: function(html, css) { return "Add after the paragraph: <img src=\"coffee.jpg\" alt=\"Fresh brewed coffee\">"; },
+        successMsg: "Perfect! Images make your website visually appealing. Always include alt text for accessibility.",
+        errorMsg: ""
+      },
+      {
+        id: 9,
+        title: "Style the Image",
+        file: "style.css",
+        description: "<strong>Make images responsive</strong> Use <code>max-width: 100%</code> to ensure images never overflow their container, and <code>border-radius</code> to add soft rounded corners.",
+        task: "Add: img { max-width: 100%; border-radius: 12px; } so the image fits its container and has rounded corners.",
+        tip: "max-width: 100% ensures the image never overflows its container. border-radius adds soft, modern corners.",
+        startingHtml: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Brew &amp; Bean Coffee</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h1>Brew &amp; Bean Coffee</h1>\n  <p>Welcome to Brew &amp; Bean, where every cup tells a story. We serve handcrafted coffee made from the finest beans.</p>\n  <img src=\"coffee.jpg\" alt=\"Fresh brewed coffee\">\n</body>\n</html>",
+        startingCss: "/* style.css - Coffee Shop Styles */\n\nh1 {\n  color: #6B3E2E;\n}\n\nbody {\n  background-color: #F5F0EB;\n}\n\np {\n  font-size: 18px;\n  line-height: 1.6;\n  color: #4A3728;\n}",
+        validate: function(html, css) { return css.indexOf('border-radius:') !== -1 && css.indexOf('max-width:') !== -1; },
+        getHint: function(html, css) { return "Add to CSS: img { max-width: 100%; border-radius: 12px; }"; },
+        successMsg: "Beautiful! Rounded corners make images look modern and polished. max-width keeps them responsive.",
+        errorMsg: ""
+      },
+      {
+        id: 10,
+        title: "Add Our Menu Section",
+        file: "index.html",
+        description: "<strong>Organize content with sections</strong> The <code>&lt;section&gt;</code> tag groups related content together. Use <code>&lt;ul&gt;</code> (unordered list) with <code>&lt;li&gt;</code> items to display a list.",
+        task: "After the image, add a <section> with <h2>Our Menu</h2> and a <ul> list of coffee items.",
+        tip: "The <section> tag groups related content. <ul> creates a bulleted list. Each item uses <li>.",
+        startingHtml: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Brew &amp; Bean Coffee</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h1>Brew &amp; Bean Coffee</h1>\n  <p>Welcome to Brew &amp; Bean, where every cup tells a story. We serve handcrafted coffee made from the finest beans.</p>\n  <img src=\"coffee.jpg\" alt=\"Fresh brewed coffee\">\n</body>\n</html>",
+        startingCss: "/* style.css - Coffee Shop Styles */\n\nh1 {\n  color: #6B3E2E;\n}\n\nbody {\n  background-color: #F5F0EB;\n}\n\np {\n  font-size: 18px;\n  line-height: 1.6;\n  color: #4A3728;\n}\n\nimg {\n  max-width: 100%;\n  border-radius: 12px;\n}",
+        validate: function(html, css) { return html.indexOf('<section') !== -1 && html.indexOf('Our Menu') !== -1 && html.indexOf('<ul>') !== -1; },
+        getHint: function(html, css) { return "Add: <section><h2>Our Menu</h2><ul><li>Espresso</li><li>Cappuccino</li><li>Latte</li><li>Cold Brew</li></ul></section>"; },
+        successMsg: "Great! Your menu section lists coffee offerings. Using semantic HTML like <section> helps organize your page.",
+        errorMsg: ""
+      },
+      {
+        id: 11,
+        title: "Style the Menu Section",
+        file: "style.css",
+        description: "<strong>Create visual cards</strong> Adding <code>background: white</code>, <code>padding</code>, and <code>border-radius</code> to sections creates card-like containers that stand out against the page background.",
+        task: "Add: section { background: white; padding: 20px; margin-bottom: 20px; border-radius: 12px; }",
+        tip: "White backgrounds on sections create visual cards against the page background. margin-bottom adds spacing between sections.",
+        startingHtml: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Brew &amp; Bean Coffee</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h1>Brew &amp; Bean Coffee</h1>\n  <p>Welcome to Brew &amp; Bean, where every cup tells a story. We serve handcrafted coffee made from the finest beans.</p>\n  <img src=\"coffee.jpg\" alt=\"Fresh brewed coffee\">\n  <section>\n    <h2>Our Menu</h2>\n    <ul>\n      <li>Espresso</li>\n      <li>Cappuccino</li>\n      <li>Latte</li>\n      <li>Cold Brew</li>\n    </ul>\n  </section>\n</body>\n</html>",
+        startingCss: "/* style.css - Coffee Shop Styles */\n\nh1 {\n  color: #6B3E2E;\n}\n\nbody {\n  background-color: #F5F0EB;\n}\n\np {\n  font-size: 18px;\n  line-height: 1.6;\n  color: #4A3728;\n}\n\nimg {\n  max-width: 100%;\n  border-radius: 12px;\n}",
+        validate: function(html, css) { return css.indexOf('section {') !== -1 && css.indexOf('padding:') !== -1 && css.indexOf('background: white') !== -1; },
+        getHint: function(html, css) { return "Add: section { background: white; padding: 20px; margin-bottom: 20px; border-radius: 12px; }"; },
+        successMsg: "Excellent! Each section now looks like a distinct card. This is how professional sites create visual separation.",
+        errorMsg: ""
+      },
+      {
+        id: 12,
+        title: "Add Order Button",
+        file: "index.html",
+        description: "<strong>Add interactive buttons</strong> The <code>&lt;button&gt;</code> element creates a clickable button. Buttons let users take action \u2014 like placing an order or submitting a form.",
+        task: "Inside the menu section, after the <ul>, add a button: <button>Order Now</button>",
+        tip: "",
+        startingHtml: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Brew &amp; Bean Coffee</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h1>Brew &amp; Bean Coffee</h1>\n  <p>Welcome to Brew &amp; Bean, where every cup tells a story. We serve handcrafted coffee made from the finest beans.</p>\n  <img src=\"coffee.jpg\" alt=\"Fresh brewed coffee\">\n  <section>\n    <h2>Our Menu</h2>\n    <ul>\n      <li>Espresso</li>\n      <li>Cappuccino</li>\n      <li>Latte</li>\n      <li>Cold Brew</li>\n    </ul>\n  </section>\n</body>\n</html>",
+        startingCss: "/* style.css - Coffee Shop Styles */\n\nh1 {\n  color: #6B3E2E;\n}\n\nbody {\n  background-color: #F5F0EB;\n}\n\np {\n  font-size: 18px;\n  line-height: 1.6;\n  color: #4A3728;\n}\n\nimg {\n  max-width: 100%;\n  border-radius: 12px;\n}\n\nsection {\n  background: white;\n  padding: 20px;\n  margin-bottom: 20px;\n  border-radius: 12px;\n}",
+        validate: function(html, css) { return html.indexOf('<button') !== -1 && html.indexOf('Order Now') !== -1; },
+        getHint: function(html, css) { return "Add inside the section after the list: <button>Order Now</button>"; },
+        successMsg: "Great! Buttons let users take action on your site. They're essential for any interactive website.",
+        errorMsg: ""
+      },
+      {
+        id: 13,
+        title: "Style the Button",
+        file: "style.css",
+        description: "<strong>Design clickable buttons</strong> Use <code>background</code>, <code>color</code>, <code>padding</code>, <code>border-radius</code>, and <code>cursor</code> to style buttons that match your brand.",
+        task: "Add: button { background: #6B3E2E; color: white; border: none; padding: 12px 30px; border-radius: 8px; font-size: 16px; cursor: pointer; }",
+        tip: "border: none removes the default button border. cursor: pointer changes the mouse to a hand icon on hover.",
+        startingHtml: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Brew &amp; Bean Coffee</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h1>Brew &amp; Bean Coffee</h1>\n  <p>Welcome to Brew &amp; Bean, where every cup tells a story. We serve handcrafted coffee made from the finest beans.</p>\n  <img src=\"coffee.jpg\" alt=\"Fresh brewed coffee\">\n  <section>\n    <h2>Our Menu</h2>\n    <ul>\n      <li>Espresso</li>\n      <li>Cappuccino</li>\n      <li>Latte</li>\n      <li>Cold Brew</li>\n    </ul>\n    <button>Order Now</button>\n  </section>\n</body>\n</html>",
+        startingCss: "/* style.css - Coffee Shop Styles */\n\nh1 {\n  color: #6B3E2E;\n}\n\nbody {\n  background-color: #F5F0EB;\n}\n\np {\n  font-size: 18px;\n  line-height: 1.6;\n  color: #4A3728;\n}\n\nimg {\n  max-width: 100%;\n  border-radius: 12px;\n}\n\nsection {\n  background: white;\n  padding: 20px;\n  margin-bottom: 20px;\n  border-radius: 12px;\n}",
+        validate: function(html, css) { return css.indexOf('button {') !== -1 && css.indexOf('background: #6B3E2E') !== -1 && css.indexOf('cursor: pointer') !== -1; },
+        getHint: function(html, css) { return "Add: button { background: #6B3E2E; color: white; border: none; padding: 12px 30px; border-radius: 8px; font-size: 16px; cursor: pointer; }"; },
+        successMsg: "Beautiful! Your button now matches the coffee shop theme. The padding makes it easy to click.",
+        errorMsg: ""
+      },
+      {
+        id: 14,
+        title: "Add a Button Hover Effect",
+        file: "style.css",
+        description: "<strong>Add interactivity with :hover</strong> The <code>:hover</code> pseudo-class applies styles when the user's mouse is over an element. It provides visual feedback that makes your site feel responsive.",
+        task: "Add: button:hover { background: #8B5E3C; } to make the button slightly lighter when hovered.",
+        tip: "The :hover pseudo-class applies styles when the user's mouse is over an element. It provides visual feedback.",
+        startingHtml: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Brew &amp; Bean Coffee</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h1>Brew &amp; Bean Coffee</h1>\n  <p>Welcome to Brew &amp; Bean, where every cup tells a story. We serve handcrafted coffee made from the finest beans.</p>\n  <img src=\"coffee.jpg\" alt=\"Fresh brewed coffee\">\n  <section>\n    <h2>Our Menu</h2>\n    <ul>\n      <li>Espresso</li>\n      <li>Cappuccino</li>\n      <li>Latte</li>\n      <li>Cold Brew</li>\n    </ul>\n    <button>Order Now</button>\n  </section>\n</body>\n</html>",
+        startingCss: "/* style.css - Coffee Shop Styles */\n\nh1 {\n  color: #6B3E2E;\n}\n\nbody {\n  background-color: #F5F0EB;\n}\n\np {\n  font-size: 18px;\n  line-height: 1.6;\n  color: #4A3728;\n}\n\nimg {\n  max-width: 100%;\n  border-radius: 12px;\n}\n\nsection {\n  background: white;\n  padding: 20px;\n  margin-bottom: 20px;\n  border-radius: 12px;\n}\n\nbutton {\n  background: #6B3E2E;\n  color: white;\n  border: none;\n  padding: 12px 30px;\n  border-radius: 8px;\n  font-size: 16px;\n  cursor: pointer;\n}",
+        validate: function(html, css) { return css.indexOf(':hover') !== -1; },
+        getHint: function(html, css) { return "Add: button:hover { background: #8B5E3C; }"; },
+        successMsg: "Excellent! Hover effects make your site feel interactive and responsive. They're a hallmark of professional design.",
+        errorMsg: ""
+      },
+      {
+        id: 15,
+        title: "Wrap Content in a Card Container",
+        file: "index.html",
+        description: "<strong>Group elements with div</strong> The <code>&lt;div&gt;</code> is a generic container that groups elements together. Adding a <code>class</code> attribute lets you target it with CSS.",
+        task: "Wrap your <h1>, <p>, and <img> inside a <div class=\"card\"> to group them together.",
+        tip: "The <div> is a generic container. Classes let you apply specific styles to elements.",
+        startingHtml: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Brew &amp; Bean Coffee</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h1>Brew &amp; Bean Coffee</h1>\n  <p>Welcome to Brew &amp; Bean, where every cup tells a story. We serve handcrafted coffee made from the finest beans.</p>\n  <img src=\"coffee.jpg\" alt=\"Fresh brewed coffee\">\n  <section>\n    <h2>Our Menu</h2>\n    <ul>\n      <li>Espresso</li>\n      <li>Cappuccino</li>\n      <li>Latte</li>\n      <li>Cold Brew</li>\n    </ul>\n    <button>Order Now</button>\n  </section>\n</body>\n</html>",
+        startingCss: "/* style.css - Coffee Shop Styles */\n\nh1 {\n  color: #6B3E2E;\n}\n\nbody {\n  background-color: #F5F0EB;\n}\n\np {\n  font-size: 18px;\n  line-height: 1.6;\n  color: #4A3728;\n}\n\nimg {\n  max-width: 100%;\n  border-radius: 12px;\n}\n\nsection {\n  background: white;\n  padding: 20px;\n  margin-bottom: 20px;\n  border-radius: 12px;\n}\n\nbutton {\n  background: #6B3E2E;\n  color: white;\n  border: none;\n  padding: 12px 30px;\n  border-radius: 8px;\n  font-size: 16px;\n  cursor: pointer;\n}\n\nbutton:hover {\n  background: #8B5E3C;\n}",
+        validate: function(html, css) { return html.indexOf('class=\"card\"') !== -1; },
+        getHint: function(html, css) { return "Wrap h1, p, and img in: <div class=\"card\"> ... </div>"; },
+        successMsg: "Great! Wrapping content in a container div lets you style them as a group. Classes are how we target elements in CSS.",
+        errorMsg: ""
+      },
+      {
+        id: 16,
+        title: "Style the Card",
+        file: "style.css",
+        description: "<strong>Center and enhance with box-shadow</strong> Use <code>max-width</code> with <code>margin: 0 auto</code> to center content. <code>box-shadow</code> adds depth beneath the card.",
+        task: "Add: .card { max-width: 800px; margin: 0 auto; padding: 30px; background: white; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }",
+        tip: "margin: 0 auto centers the card horizontally. box-shadow adds depth with a subtle shadow beneath the card.",
+        startingHtml: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Brew &amp; Bean Coffee</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div class=\"card\">\n    <h1>Brew &amp; Bean Coffee</h1>\n    <p>Welcome to Brew &amp; Bean, where every cup tells a story. We serve handcrafted coffee made from the finest beans.</p>\n    <img src=\"coffee.jpg\" alt=\"Fresh brewed coffee\">\n  </div>\n  <section>\n    <h2>Our Menu</h2>\n    <ul>\n      <li>Espresso</li>\n      <li>Cappuccino</li>\n      <li>Latte</li>\n      <li>Cold Brew</li>\n    </ul>\n    <button>Order Now</button>\n  </section>\n</body>\n</html>",
+        startingCss: "/* style.css - Coffee Shop Styles */\n\nh1 {\n  color: #6B3E2E;\n}\n\nbody {\n  background-color: #F5F0EB;\n}\n\np {\n  font-size: 18px;\n  line-height: 1.6;\n  color: #4A3728;\n}\n\nimg {\n  max-width: 100%;\n  border-radius: 12px;\n}\n\nsection {\n  background: white;\n  padding: 20px;\n  margin-bottom: 20px;\n  border-radius: 12px;\n}\n\nbutton {\n  background: #6B3E2E;\n  color: white;\n  border: none;\n  padding: 12px 30px;\n  border-radius: 8px;\n  font-size: 16px;\n  cursor: pointer;\n}\n\nbutton:hover {\n  background: #8B5E3C;\n}",
+        validate: function(html, css) { return css.indexOf('.card') !== -1 && css.indexOf('max-width:') !== -1 && css.indexOf('box-shadow:') !== -1; },
+        getHint: function(html, css) { return "Add: .card { max-width: 800px; margin: 0 auto; padding: 30px; background: white; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }"; },
+        successMsg: "Perfect! The card now has a shadow, centered layout, and white background \u2014 like an elegant menu card in a coffee shop.",
+        errorMsg: ""
+      },
+      {
+        id: 17,
+        title: "Add About Us Section",
+        file: "index.html",
+        description: "<strong>Unique sections with id</strong> The <code>id</code> attribute gives a unique identifier to an element. Unlike classes which can be reused, each id must be unique on the page.",
+        task: "After the menu section, add: <section id=\"about\"><h2>About Us</h2><p>Founded in 2020, Brew &amp; Bean is a cozy neighborhood coffee shop dedicated to serving the highest quality coffee.</p></section>",
+        tip: "The id attribute gives a unique identifier to an element. It's useful for targeted styling and anchor links.",
+        startingHtml: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Brew &amp; Bean Coffee</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div class=\"card\">\n    <h1>Brew &amp; Bean Coffee</h1>\n    <p>Welcome to Brew &amp; Bean, where every cup tells a story. We serve handcrafted coffee made from the finest beans.</p>\n    <img src=\"coffee.jpg\" alt=\"Fresh brewed coffee\">\n  </div>\n  <section>\n    <h2>Our Menu</h2>\n    <ul>\n      <li>Espresso</li>\n      <li>Cappuccino</li>\n      <li>Latte</li>\n      <li>Cold Brew</li>\n    </ul>\n    <button>Order Now</button>\n  </section>\n</body>\n</html>",
+        startingCss: "/* style.css - Coffee Shop Styles */\n\nh1 {\n  color: #6B3E2E;\n}\n\nbody {\n  background-color: #F5F0EB;\n}\n\np {\n  font-size: 18px;\n  line-height: 1.6;\n  color: #4A3728;\n}\n\nimg {\n  max-width: 100%;\n  border-radius: 12px;\n}\n\nsection {\n  background: white;\n  padding: 20px;\n  margin-bottom: 20px;\n  border-radius: 12px;\n}\n\nbutton {\n  background: #6B3E2E;\n  color: white;\n  border: none;\n  padding: 12px 30px;\n  border-radius: 8px;\n  font-size: 16px;\n  cursor: pointer;\n}\n\nbutton:hover {\n  background: #8B5E3C;\n}\n\n.card {\n  max-width: 800px;\n  margin: 0 auto;\n  padding: 30px;\n  background: white;\n  border-radius: 16px;\n  box-shadow: 0 4px 20px rgba(0,0,0,0.1);\n}",
+        validate: function(html, css) { return html.indexOf('id=\"about\"') !== -1 && html.indexOf('About Us') !== -1; },
+        getHint: function(html, css) { return "Add: <section id=\"about\"><h2>About Us</h2><p>Founded in 2020...</p></section>"; },
+        successMsg: "Great! Each section of your page now has a clear purpose. The id=\"about\" lets you style this section uniquely.",
+        errorMsg: ""
+      },
+      {
+        id: 18,
+        title: "Style the About Section",
+        file: "style.css",
+        description: "<strong>Target elements by id</strong> The <code>#</code> selector in CSS targets an element by its <code>id</code> attribute. Id selectors are more specific than class or tag selectors.",
+        task: "Add: #about { background: #FAF6F1; border-left: 4px solid #6B3E2E; } to give the about section a special style.",
+        tip: "The # selector targets an element by its id attribute. Id selectors are more specific than class or tag selectors.",
+        startingHtml: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Brew &amp; Bean Coffee</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div class=\"card\">\n    <h1>Brew &amp; Bean Coffee</h1>\n    <p>Welcome to Brew &amp; Bean, where every cup tells a story. We serve handcrafted coffee made from the finest beans.</p>\n    <img src=\"coffee.jpg\" alt=\"Fresh brewed coffee\">\n  </div>\n  <section>\n    <h2>Our Menu</h2>\n    <ul>\n      <li>Espresso</li>\n      <li>Cappuccino</li>\n      <li>Latte</li>\n      <li>Cold Brew</li>\n    </ul>\n    <button>Order Now</button>\n  </section>\n  <section id=\"about\">\n    <h2>About Us</h2>\n    <p>Founded in 2020, Brew &amp; Bean is a cozy neighborhood coffee shop dedicated to serving the highest quality coffee.</p>\n  </section>\n</body>\n</html>",
+        startingCss: "/* style.css - Coffee Shop Styles */\n\nh1 {\n  color: #6B3E2E;\n}\n\nbody {\n  background-color: #F5F0EB;\n}\n\np {\n  font-size: 18px;\n  line-height: 1.6;\n  color: #4A3728;\n}\n\nimg {\n  max-width: 100%;\n  border-radius: 12px;\n}\n\nsection {\n  background: white;\n  padding: 20px;\n  margin-bottom: 20px;\n  border-radius: 12px;\n}\n\nbutton {\n  background: #6B3E2E;\n  color: white;\n  border: none;\n  padding: 12px 30px;\n  border-radius: 8px;\n  font-size: 16px;\n  cursor: pointer;\n}\n\nbutton:hover {\n  background: #8B5E3C;\n}\n\n.card {\n  max-width: 800px;\n  margin: 0 auto;\n  padding: 30px;\n  background: white;\n  border-radius: 16px;\n  box-shadow: 0 4px 20px rgba(0,0,0,0.1);\n}",
+        validate: function(html, css) { return css.indexOf('#about') !== -1; },
+        getHint: function(html, css) { return "Add: #about { background: #FAF6F1; border-left: 4px solid #6B3E2E; }"; },
+        successMsg: "Excellent! The about section now has a warm background and a coffee-colored accent border. Id selectors are perfect for unique sections.",
+        errorMsg: ""
+      },
+      {
+        id: 19,
+        title: "Add Contact Section",
+        file: "index.html",
+        description: "<strong>Complete your page structure</strong> Building a complete landing page requires multiple sections. Each section serves a different purpose, creating a clear, organized layout.",
+        task: "After the about section, add: <section id=\"contact\"><h2>Contact Us</h2><p>Visit us at 123 Coffee Street, or call (555) 123-4567</p><button>Get in Touch</button></section>",
+        tip: "",
+        startingHtml: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Brew &amp; Bean Coffee</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div class=\"card\">\n    <h1>Brew &amp; Bean Coffee</h1>\n    <p>Welcome to Brew &amp; Bean, where every cup tells a story. We serve handcrafted coffee made from the finest beans.</p>\n    <img src=\"coffee.jpg\" alt=\"Fresh brewed coffee\">\n  </div>\n  <section>\n    <h2>Our Menu</h2>\n    <ul>\n      <li>Espresso</li>\n      <li>Cappuccino</li>\n      <li>Latte</li>\n      <li>Cold Brew</li>\n    </ul>\n    <button>Order Now</button>\n  </section>\n  <section id=\"about\">\n    <h2>About Us</h2>\n    <p>Founded in 2020, Brew &amp; Bean is a cozy neighborhood coffee shop dedicated to serving the highest quality coffee.</p>\n  </section>\n</body>\n</html>",
+        startingCss: "/* style.css - Coffee Shop Styles */\n\nh1 {\n  color: #6B3E2E;\n}\n\nbody {\n  background-color: #F5F0EB;\n}\n\np {\n  font-size: 18px;\n  line-height: 1.6;\n  color: #4A3728;\n}\n\nimg {\n  max-width: 100%;\n  border-radius: 12px;\n}\n\nsection {\n  background: white;\n  padding: 20px;\n  margin-bottom: 20px;\n  border-radius: 12px;\n}\n\nbutton {\n  background: #6B3E2E;\n  color: white;\n  border: none;\n  padding: 12px 30px;\n  border-radius: 8px;\n  font-size: 16px;\n  cursor: pointer;\n}\n\nbutton:hover {\n  background: #8B5E3C;\n}\n\n.card {\n  max-width: 800px;\n  margin: 0 auto;\n  padding: 30px;\n  background: white;\n  border-radius: 16px;\n  box-shadow: 0 4px 20px rgba(0,0,0,0.1);\n}\n\n#about {\n  background: #FAF6F1;\n  border-left: 4px solid #6B3E2E;\n}",
+        validate: function(html, css) { return html.indexOf('id=\"contact\"') !== -1 && html.indexOf('Contact Us') !== -1 && html.indexOf('Get in Touch') !== -1; },
+        getHint: function(html, css) { return "Add: <section id=\"contact\"><h2>Contact Us</h2><p>Visit us...</p><button>Get in Touch</button></section>"; },
+        successMsg: "Your coffee shop page is now complete with a contact section! Multiple sections give the page a professional structure.",
+        errorMsg: ""
+      },
+      {
+        id: 20,
+        title: "Final Polish",
+        file: "style.css",
+        description: "<strong>Finishing touches</strong> Center text with <code>text-align: center</code>, remove bullet points with <code>list-style: none</code>, and add spacing. These small refinements make your page look professionally designed.",
+        task: "Add these final touches to your CSS: #contact { text-align: center; background: #6B3E2E; color: white; } ul { list-style: none; padding: 0; } li { padding: 8px 0; font-size: 18px; } .card { text-align: center; }",
+        tip: "text-align: center centers text horizontally. list-style: none removes bullet points for a cleaner look.",
+        startingHtml: "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Brew &amp; Bean Coffee</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div class=\"card\">\n    <h1>Brew &amp; Bean Coffee</h1>\n    <p>Welcome to Brew &amp; Bean, where every cup tells a story. We serve handcrafted coffee made from the finest beans.</p>\n    <img src=\"coffee.jpg\" alt=\"Fresh brewed coffee\">\n  </div>\n  <section>\n    <h2>Our Menu</h2>\n    <ul>\n      <li>Espresso</li>\n      <li>Cappuccino</li>\n      <li>Latte</li>\n      <li>Cold Brew</li>\n    </ul>\n    <button>Order Now</button>\n  </section>\n  <section id=\"about\">\n    <h2>About Us</h2>\n    <p>Founded in 2020, Brew &amp; Bean is a cozy neighborhood coffee shop dedicated to serving the highest quality coffee.</p>\n  </section>\n  <section id=\"contact\">\n    <h2>Contact Us</h2>\n    <p>Visit us at 123 Coffee Street, or call (555) 123-4567</p>\n    <button>Get in Touch</button>\n  </section>\n</body>\n</html>",
+        startingCss: "/* style.css - Coffee Shop Styles */\n\nh1 {\n  color: #6B3E2E;\n}\n\nbody {\n  background-color: #F5F0EB;\n}\n\np {\n  font-size: 18px;\n  line-height: 1.6;\n  color: #4A3728;\n}\n\nimg {\n  max-width: 100%;\n  border-radius: 12px;\n}\n\nsection {\n  background: white;\n  padding: 20px;\n  margin-bottom: 20px;\n  border-radius: 12px;\n}\n\nbutton {\n  background: #6B3E2E;\n  color: white;\n  border: none;\n  padding: 12px 30px;\n  border-radius: 8px;\n  font-size: 16px;\n  cursor: pointer;\n}\n\nbutton:hover {\n  background: #8B5E3C;\n}\n\n.card {\n  max-width: 800px;\n  margin: 0 auto;\n  padding: 30px;\n  background: white;\n  border-radius: 16px;\n  box-shadow: 0 4px 20px rgba(0,0,0,0.1);\n}\n\n#about {\n  background: #FAF6F1;\n  border-left: 4px solid #6B3E2E;\n}",
+        validate: function(html, css) { return css.indexOf('list-style: none') !== -1 && css.indexOf('text-align: center') !== -1; },
+        getHint: function(html, css) { return "Add styling for #contact, ul, and li to complete your coffee shop design."; },
+        successMsg: "\uD83C\uDF89 AMAZING! You built a complete Coffee Shop Landing Page using professional HTML + CSS workflow! You now understand how index.html and style.css work together! \uD83C\uDF89",
+        errorMsg: ""
+      }
+    ],
+
   };
 
   /* ===== DYNAMIC LEVEL CARD LESSON COUNTS ===== */
@@ -2490,7 +2774,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
       var steps = lessonData[levelId];
       if (steps && steps.length > 0) {
-        var finalCode = steps[steps.length - 1].startingCode;
+        var lastStep = steps[steps.length - 1];
+        var finalCode;
+        if (levelId === 'css-2') {
+          var html = lastStep.startingHtml || '';
+          var css = lastStep.startingCss || '';
+          finalCode = html.replace('</head>', '<style>\n' + css + '\n</style>\n</head>');
+        } else {
+          finalCode = lastStep.startingCode;
+        }
         if (previewFrame) {
           var doc = previewFrame.contentDocument || previewFrame.contentWindow.document;
           doc.open();
@@ -3086,6 +3378,265 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     setupResizeHandles();
+
+    /* ===== CSS-2 DUAL EDITOR MODE ===== */
+    if (levelId === 'css-2') {
+      var htmlEditor = document.getElementById('htmlEditor');
+      var cssEditor = document.getElementById('cssEditor');
+      var htmlTab = document.querySelector('.editor-tab[data-file="index.html"]');
+      var cssTab = document.querySelector('.editor-tab[data-file="style.css"]');
+      var editorLineNumbers = document.getElementById('lineNumbers');
+      var activeFileTab = 'index.html';
+
+      state.htmlCode = '';
+      state.cssCode = '';
+      state.htmlSavedCodes = {};
+      state.cssSavedCodes = {};
+
+      var origLoadStep = loadStep;
+      loadStep = function(index) {
+        var step = steps[index];
+        if (!step) {
+          if (instructionsPanel) {
+            instructionsPanel.innerHTML = '<div class="step-counter"><span class="step-number">!</span><div><div class="step-label">Loading...</div></div></div><h2 class="step-title">Step not found</h2><div class="step-description">The lesson data for this step is missing. Please refresh the page.</div>';
+          }
+          return;
+        }
+
+        state.currentStep = index;
+        state.validated = false;
+
+        if (instructionsPanel) {
+          var fileBadge = step.file ? '<div class="step-file-badge">\uD83D\uDCC1 ' + step.file + '</div>' : '';
+          instructionsPanel.innerHTML =
+            '<div class="step-counter">' +
+            '<span class="step-number">' + (index + 1) + '</span>' +
+            '<div><div class="step-label">Step ' + (index + 1) + ' of ' + steps.length + '</div></div>' +
+            '</div>' +
+            fileBadge +
+            '<h2 class="step-title">' + step.title + '</h2>' +
+            '<div class="step-description">' + step.description + '</div>' +
+            '<div class="step-task">' +
+            '<div class="step-task-label">\u270D\uFE0F Your Task</div>' +
+            '<p>' + step.task + '</p>' +
+            '</div>' +
+            (step.tip ? '<div class="tip-box"><div class="tip-label">\u25B6 Tip</div><p>' + step.tip + '</p></div>' : '');
+        }
+
+        if (state.htmlSavedCodes.hasOwnProperty(index)) {
+          state.htmlCode = state.htmlSavedCodes[index];
+        } else {
+          state.htmlCode = step.startingHtml || '';
+        }
+        if (state.cssSavedCodes.hasOwnProperty(index)) {
+          state.cssCode = state.cssSavedCodes[index];
+        } else {
+          state.cssCode = step.startingCss || '';
+        }
+
+        if (htmlEditor) htmlEditor.value = state.htmlCode;
+        if (cssEditor) cssEditor.value = state.cssCode;
+        updateLineNumbers();
+
+        if (validationMessage) validationMessage.classList.add('hidden');
+
+        if (stepIndicator) stepIndicator.textContent = 'Step ' + (index + 1) + ' of ' + steps.length;
+        if (toolbarStepTitle) toolbarStepTitle.textContent = step.title;
+
+        updateProgressDots();
+        updateLevelProgress();
+
+        if (backBtn) backBtn.disabled = index === 0;
+        if (nextBtn) {
+          nextBtn.disabled = true;
+          if (index === steps.length - 1) {
+            nextBtn.innerHTML = '\uD83C\uDF81 Complete Level';
+            nextBtn.classList.add('final');
+          } else {
+            nextBtn.innerHTML = 'Next Step \u2192';
+            nextBtn.classList.remove('final');
+          }
+        }
+
+        if (previewFrame) runCode();
+
+        if (runBtn) runBtn.innerHTML = index === steps.length - 1 ? '\u25B6 Run Final Code' : '\u25B6 Run';
+
+        if (index === steps.length - 1) {
+          setTimeout(function() { state.validated = true; if (nextBtn) nextBtn.disabled = false; }, 300);
+        }
+
+        if (instructionsPanel) instructionsPanel.scrollTop = 0;
+      };
+
+      runCode = function() {
+        if (!previewFrame) return;
+        var html = state.htmlCode || '';
+        var css = state.cssCode || '';
+        if (!html.trim()) {
+          var doc = previewFrame.contentDocument || previewFrame.contentWindow.document;
+          doc.open();
+          doc.write('<html><body style="display:flex;align-items:center;justify-content:center;font-family:sans-serif;color:#999;">No code to preview</body></html>');
+          doc.close();
+          return;
+        }
+        var combined = html;
+        if (css.trim()) {
+          if (combined.indexOf('</head>') !== -1) {
+            combined = combined.replace('</head>', '<style>\n' + css + '\n</style>\n</head>');
+          } else {
+            combined = combined + '\n<style>\n' + css + '\n</style>\n';
+          }
+        }
+        var doc = previewFrame.contentDocument || previewFrame.contentWindow.document;
+        doc.open();
+        doc.write(combined);
+        doc.close();
+      };
+
+      validateCode = function() {
+        var step = steps[state.currentStep];
+        if (!step) return false;
+        var isValid = step.validate(state.htmlCode, state.cssCode);
+        if (!validationMessage) return isValid;
+        validationMessage.classList.remove('hidden', 'success', 'error');
+        if (isValid) {
+          validationMessage.className = 'validation-message success';
+          validationMessage.innerHTML = '<span class="msg-icon">\u2713</span><span class="msg-text">' + step.successMsg + '</span>';
+          state.validated = true;
+          state.completedSteps[state.currentStep] = true;
+          saveCompletedSteps();
+          updateLevelProgress();
+          if (nextBtn) nextBtn.disabled = false;
+          updateProgressDots();
+        } else {
+          var hintText = '';
+          if (step.getHint) hintText = step.getHint(state.htmlCode, state.cssCode);
+          var displayMsg = hintText || step.errorMsg;
+          validationMessage.className = 'validation-message error';
+          validationMessage.innerHTML = '<span class="msg-icon">\u2715</span><span class="msg-text">' + displayMsg + '</span>';
+          state.validated = false;
+          if (nextBtn) nextBtn.disabled = true;
+        }
+        return isValid;
+      };
+
+      clearCode = function() {
+        var step = steps[state.currentStep];
+        if (!step) return;
+        state.htmlCode = step.startingHtml || '';
+        state.cssCode = step.startingCss || '';
+        state.htmlSavedCodes[state.currentStep] = state.htmlCode;
+        state.cssSavedCodes[state.currentStep] = state.cssCode;
+        if (htmlEditor) htmlEditor.value = state.htmlCode;
+        if (cssEditor) cssEditor.value = state.cssCode;
+        updateLineNumbers();
+        if (validationMessage) validationMessage.classList.add('hidden');
+        state.validated = false;
+        if (nextBtn) nextBtn.disabled = true;
+      };
+
+      setupEditorLineNumbers = function() {
+        function handleInput() {
+          if (htmlEditor) state.htmlCode = htmlEditor.value;
+          if (cssEditor) state.cssCode = cssEditor.value;
+          state.htmlSavedCodes[state.currentStep] = state.htmlCode;
+          state.cssSavedCodes[state.currentStep] = state.cssCode;
+          state.validated = false;
+          if (nextBtn) nextBtn.disabled = true;
+          if (validationMessage) validationMessage.classList.add('hidden');
+          updateLineNumbers();
+        }
+
+        function handleTabKey(e) {
+          if (e.key === 'Tab') {
+            e.preventDefault();
+            var start = this.selectionStart;
+            var end = this.selectionEnd;
+            this.value = this.value.substring(0, start) + '  ' + this.value.substring(end);
+            this.selectionStart = this.selectionEnd = start + 2;
+            handleInput.call(this);
+          }
+        }
+
+        if (htmlEditor) {
+          htmlEditor.addEventListener('input', handleInput);
+          htmlEditor.addEventListener('keydown', handleTabKey);
+        }
+        if (cssEditor) {
+          cssEditor.addEventListener('input', handleInput);
+          cssEditor.addEventListener('keydown', handleTabKey);
+        }
+      };
+
+      updateLineNumbers = function() {
+        if (!editorLineNumbers) return;
+        var activeEl = activeFileTab === 'index.html' ? htmlEditor : cssEditor;
+        var lines = activeEl ? activeEl.value.split('\n').length : 1;
+        editorLineNumbers.innerHTML = '';
+        for (var i = 1; i <= lines; i++) {
+          var span = document.createElement('span');
+          span.textContent = i;
+          editorLineNumbers.appendChild(span);
+        }
+      };
+
+      function syncEditorScroll() {
+        if (!editorLineNumbers) return;
+        var activeEl = activeFileTab === 'index.html' ? htmlEditor : cssEditor;
+        if (activeEl) editorLineNumbers.scrollTop = activeEl.scrollTop;
+      }
+
+      if (htmlEditor) {
+        htmlEditor.addEventListener('scroll', syncEditorScroll);
+        htmlEditor.addEventListener('click', function() {
+          if (activeFileTab !== 'index.html') {
+            activeFileTab = 'index.html';
+            if (htmlTab) htmlTab.classList.add('active');
+            if (cssTab) cssTab.classList.remove('active');
+            if (htmlEditor) htmlEditor.classList.add('active');
+            if (cssEditor) cssEditor.classList.remove('active');
+            updateLineNumbers();
+          }
+        });
+      }
+
+      if (cssEditor) {
+        cssEditor.addEventListener('scroll', syncEditorScroll);
+        cssEditor.addEventListener('click', function() {
+          if (activeFileTab !== 'style.css') {
+            activeFileTab = 'style.css';
+            if (cssTab) cssTab.classList.add('active');
+            if (htmlTab) htmlTab.classList.remove('active');
+            if (cssEditor) cssEditor.classList.add('active');
+            if (htmlEditor) htmlEditor.classList.remove('active');
+            updateLineNumbers();
+          }
+        });
+      }
+
+      if (htmlTab) {
+        htmlTab.addEventListener('click', function() {
+          activeFileTab = 'index.html';
+          htmlTab.classList.add('active');
+          if (cssTab) cssTab.classList.remove('active');
+          if (htmlEditor) htmlEditor.classList.add('active');
+          if (cssEditor) cssEditor.classList.remove('active');
+          updateLineNumbers();
+        });
+      }
+
+      if (cssTab) {
+        cssTab.addEventListener('click', function() {
+          activeFileTab = 'style.css';
+          cssTab.classList.add('active');
+          if (htmlTab) htmlTab.classList.remove('active');
+          if (cssEditor) cssEditor.classList.add('active');
+          if (htmlEditor) htmlEditor.classList.remove('active');
+          updateLineNumbers();
+        });
+      }
+    }
 
     /* ===== KICK OFF ===== */
     init();

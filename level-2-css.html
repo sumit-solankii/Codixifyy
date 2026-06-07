@@ -107,14 +107,21 @@
       <!-- Editor Panel -->
       <div class="panel editor-panel">
         <div class="editor-label">
-          <span class="file-tab">
-            <span class="dot"></span>
-            index.html
-          </span>
+          <div class="editor-tabs">
+            <button class="editor-tab active" data-file="index.html">
+              <span class="dot"></span>
+              index.html
+            </button>
+            <button class="editor-tab" data-file="style.css">
+              <span class="dot css-dot"></span>
+              style.css
+            </button>
+          </div>
         </div>
         <div class="editor-wrapper">
           <div class="line-numbers" id="lineNumbers"></div>
-          <textarea id="codeEditor" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Write your HTML + CSS code here..."></textarea>
+          <textarea id="htmlEditor" class="editor-textarea active" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Write your HTML code here..."></textarea>
+          <textarea id="cssEditor" class="editor-textarea" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Write your CSS code here..."></textarea>
         </div>
       </div>
 

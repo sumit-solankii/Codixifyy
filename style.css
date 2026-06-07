@@ -1022,6 +1022,77 @@ img {
   border-radius: var(--radius-full);
 }
 
+.editor-tabs {
+  display: flex;
+  gap: 4px;
+}
+
+.editor-tab {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.8rem;
+  font-family: var(--font-code);
+  color: var(--text-secondary);
+  padding: 6px 14px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.editor-tab:hover {
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.1);
+}
+
+.editor-tab.active {
+  color: var(--text-primary);
+  background: rgba(0, 212, 255, 0.06);
+  border-color: rgba(0, 212, 255, 0.15);
+}
+
+.editor-tab .dot {
+  width: 8px;
+  height: 8px;
+  background: var(--neon-green);
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.editor-tab .dot.css-dot {
+  background: var(--neon-purple);
+}
+
+.editor-textarea {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 16px 16px 16px 56px;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  font-family: var(--font-code);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  resize: none;
+  outline: none;
+  z-index: 1;
+  tab-size: 2;
+}
+
+.editor-textarea.active {
+  display: block;
+}
+
+.editor-textarea::placeholder {
+  color: rgba(255,255,255,0.2);
+}
+
 .editor-wrapper {
   flex: 1;
   position: relative;
