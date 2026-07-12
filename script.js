@@ -2782,6 +2782,35 @@ document.addEventListener('DOMContentLoaded', function () {
           finalCode = html.replace('</head>', '<style>\n' + css + '\n</style>\n</head>');
         } else {
           finalCode = lastStep.startingCode;
+          var previewStyles = '<style>\n' +
+            'body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;margin:0;padding:0;color:#1e293b;background:#fff;line-height:1.6;}\n' +
+            'header{background:#0f172a;color:#fff;padding:24px 32px;text-align:center;}\n' +
+            'header h1{margin:0;font-size:1.6rem;font-weight:700;}\n' +
+            'header p{margin:6px 0 0;color:#94a3b8;font-size:0.9rem;}\n' +
+            'nav{background:#1e293b;padding:12px 32px;text-align:center;}\n' +
+            'nav ul{list-style:none;margin:0;padding:0;display:flex;gap:24px;justify-content:center;}\n' +
+            'nav a{color:#cbd5e1;text-decoration:none;font-size:0.85rem;font-weight:500;transition:color 0.2s;}\n' +
+            'nav a:hover{color:#fff;}\n' +
+            'section{padding:32px;max-width:720px;margin:0 auto;}\n' +
+            'section h1{font-size:1.8rem;font-weight:800;margin:0 0 8px;color:#0f172a;}\n' +
+            'section h2{font-size:1.3rem;font-weight:700;margin:0 0 16px;color:#0f172a;}\n' +
+            'section h3{font-size:1.1rem;font-weight:600;margin:0 0 6px;color:#1e293b;}\n' +
+            'section p{font-size:0.9rem;color:#475569;margin:0 0 12px;}\n' +
+            'button{background:#3b82f6;color:#fff;border:none;padding:10px 24px;border-radius:8px;font-size:0.85rem;font-weight:600;cursor:pointer;transition:background 0.2s;}\n' +
+            'button:hover{background:#2563eb;}\n' +
+            'hr{border:none;border-top:1px solid #e2e8f0;margin:0;}\n' +
+            'img{border-radius:8px;max-width:100%;height:auto;margin:8px 0;}\n' +
+            'blockquote{border-left:4px solid #3b82f6;margin:16px 0;padding:12px 20px;background:#f8fafc;border-radius:0 8px 8px 0;color:#475569;}\n' +
+            'blockquote p{margin:0;}\n' +
+            'div[style*="display:flex"]{gap:16px;flex-wrap:wrap;}\n' +
+            'div > div:not([class]){background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:20px;flex:1;min-width:180px;text-align:center;}\n' +
+            'div > div:not([class]) h3{font-size:1rem;}\n' +
+            'div > div:not([class]) p{font-size:0.82rem;}\n' +
+            'div > div:not([class]) button{margin-top:8px;}\n' +
+            'section:nth-child(even){background:#f8fafc;}\n' +
+            'footer{background:#0f172a;color:#94a3b8;text-align:center;padding:20px 32px;font-size:0.8rem;}\n' +
+            '</style>';
+          finalCode = finalCode.replace('</head>', previewStyles + '\n</head>');
         }
         if (previewFrame) {
           var doc = previewFrame.contentDocument || previewFrame.contentWindow.document;
