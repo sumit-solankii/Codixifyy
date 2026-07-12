@@ -3136,6 +3136,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (nextBtn) nextBtn.disabled = true;
         if (validationMessage) validationMessage.classList.add('hidden');
         updateLineNumbers();
+        scheduleLivePreview();
       });
 
       codeEditor.addEventListener('scroll', function () {
@@ -3164,6 +3165,15 @@ document.addEventListener('DOMContentLoaded', function () {
         span.textContent = i;
         lineNumbers.appendChild(span);
       }
+    }
+
+    /* ===== LIVE PREVIEW DEBOUNCE ===== */
+    var livePreviewTimeout = null;
+    function scheduleLivePreview() {
+      if (livePreviewTimeout) clearTimeout(livePreviewTimeout);
+      livePreviewTimeout = setTimeout(function() {
+        runCode();
+      }, 200);
     }
 
     /* ===== RUN CODE ===== */
@@ -3239,6 +3249,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       state.validated = false;
       if (nextBtn) nextBtn.disabled = true;
+      scheduleLivePreview();
     }
 
     /* ===== NAVIGATION ===== */
@@ -3565,6 +3576,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (validationMessage) validationMessage.classList.add('hidden');
         state.validated = false;
         if (nextBtn) nextBtn.disabled = true;
+        scheduleLivePreview();
       };
 
       setupEditorLineNumbers = function() {
@@ -3577,6 +3589,7 @@ document.addEventListener('DOMContentLoaded', function () {
           if (nextBtn) nextBtn.disabled = true;
           if (validationMessage) validationMessage.classList.add('hidden');
           updateLineNumbers();
+          scheduleLivePreview();
         }
 
         function handleTabKey(e) {
