@@ -1921,7 +1921,7 @@ img {
 }
 
 .toolbar-progress-dots .progress-dot.completed::after {
-  content: '\\2713';
+  content: '\2713';
   position: absolute;
   top: -3px;
   right: -3px;
