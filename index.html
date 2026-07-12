@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="style.css">
 
   <!-- Google tag (gtag.js) -->
@@ -29,23 +30,39 @@
   <div class="orb orb-3"></div>
 
   <!-- ===== NAVBAR ===== -->
-  <nav class="navbar" role="navigation">
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="container">
       <a href="index.html" class="navbar-brand">
         <span class="logo-icon">C</span>
         <span class="logo-text">Codixify</span>
       </a>
-      <div class="navbar-links">
-        <a href="index.html" class="active">Home</a>
-        <a href="html-levels.html">HTML</a>
-        <a href="css-levels.html">CSS</a>
-        <a href="#about">About</a>
+      <div class="navbar-center">
+        <div class="navbar-links">
+          <a href="index.html" class="active" aria-current="page">Home</a>
+          <a href="html-levels.html">HTML</a>
+          <a href="css-levels.html">CSS</a>
+          <a href="#about">About</a>
+        </div>
       </div>
-      <button class="navbar-toggle" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div class="navbar-right">
+        <div class="navbar-search" role="button" tabindex="0" aria-label="Search lessons">
+          <i class="bi bi-search"></i>
+          <span>Search lessons...</span>
+          <span class="search-hint">Ctrl+K</span>
+        </div>
+        <a href="#" class="navbar-icon-btn" aria-label="Notifications">
+          <i class="bi bi-bell"></i>
+          <span class="badge-dot"></span>
+        </a>
+        <div class="navbar-avatar" role="button" tabindex="0" aria-label="Profile">
+          <span>U</span>
+        </div>
+        <button class="navbar-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
@@ -55,24 +72,40 @@
       <div class="hero-content">
         <div class="hero-badge">
           <span class="dot"></span>
-          Live Interactive Learning
+          Live Interactive Learning Platform
+          <span class="badge-pill">v2.0</span>
         </div>
         <h1 class="hero-title">
-          Learn Coding by
+          Learn to Code by
           <span class="gradient-text">Building Real</span>
           <span class="block-display gradient-text">Projects</span>
         </h1>
         <p class="hero-description">
-          Master HTML, CSS, and JavaScript through hands-on lessons with a futuristic interactive code editor. No setup required — just write code and see results instantly.
+          Master HTML, CSS, and JavaScript through hands-on interactive lessons with a built-in code editor. No setup required — just write code and see results instantly in your browser.
         </p>
         <div class="hero-buttons">
           <a href="html-levels.html" class="btn btn-primary">
+            <i class="bi bi-rocket-takeoff"></i>
             Start Learning
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
           <a href="#tech" class="btn btn-secondary">
-            Explore Levels
+            <i class="bi bi-grid-3x3-gap"></i>
+            Explore Paths
           </a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="stat-value">4+</span>
+            <span class="stat-label">Languages</span>
+          </div>
+          <div class="hero-stat">
+            <span class="stat-value">50+</span>
+            <span class="stat-label">Lessons</span>
+          </div>
+          <div class="hero-stat">
+            <span class="stat-value">100%</span>
+            <span class="stat-label">Free</span>
+          </div>
         </div>
       </div>
 
@@ -83,24 +116,25 @@
             <span class="editor-dot"></span>
             <span class="editor-dot"></span>
             <span class="editor-tab">index.html</span>
+            <span class="editor-tab">style.css</span>
           </div>
           <div class="code-line"><span class="hl-blue">&lt;!DOCTYPE html&gt;</span></div>
           <div class="code-line"><span class="hl-purple">&lt;html</span> <span class="hl-cyan">lang=</span><span class="hl-green">"en"</span><span class="hl-purple">&gt;</span></div>
           <div class="code-line"><span class="hl-purple">&lt;head&gt;</span></div>
-          <div class="code-line"><span class="indent-1"><span class="hl-purple">&lt;title&gt;</span><span class="hl-white">Codixify</span><span class="hl-purple">&lt;/title&gt;</span></span></div>
+          <div class="code-line"><span class="indent-1"><span class="hl-purple">&lt;title&gt;</span><span class="hl-white">My Project</span><span class="hl-purple">&lt;/title&gt;</span></span></div>
           <div class="code-line"><span class="indent-1"><span class="hl-purple">&lt;/head&gt;</span></span></div>
           <div class="code-line"><span class="hl-purple">&lt;body&gt;</span></div>
           <div class="code-line"><span class="indent-1"><span class="hl-purple">&lt;h1&gt;</span><span class="hl-white">Hello, World!</span><span class="hl-purple">&lt;/h1&gt;</span></span></div>
-          <div class="code-line"><span class="indent-1"><span class="hl-purple">&lt;p&gt;</span><span class="hl-white">Welcome to the future of learning.</span><span class="hl-purple">&lt;/p&gt;</span></span></div>
+          <div class="code-line"><span class="indent-1"><span class="hl-purple">&lt;p&gt;</span><span class="hl-white">Welcome to Codixify &mdash; the future of coding.</span><span class="hl-purple">&lt;/p&gt;</span></span></div>
           <div class="code-line"><span class="hl-purple">&lt;/body&gt;</span></div>
           <div class="code-line"><span class="hl-purple">&lt;/html&gt;</span></div>
-          <div class="code-line"><span class="hl-dim">&lt;!-- 🚀 Ready to build --&gt;</span><span class="cursor-blink"></span></div>
+          <div class="code-line"><span class="hl-dim">&lt;!-- Ready to build something amazing? --&gt;</span><span class="cursor-blink"></span></div>
         </div>
 
         <div class="floating-elements">
-          <span class="float-el">&lt;div&gt;</span>
-          <span class="float-el">{ display: flex; }</span>
-          <span class="float-el">console.log()</span>
+          <span class="float-el"><i class="bi bi-filetype-html"></i> HTML5</span>
+          <span class="float-el"><i class="bi bi-filetype-css"></i> CSS3</span>
+          <span class="float-el"><i class="bi bi-filetype-js"></i> JavaScript</span>
         </div>
       </div>
     </div>
@@ -118,45 +152,75 @@
       </div>
 
       <div class="tech-grid">
-        <div class="tech-card html-card" onclick="window.location.href='html-levels.html'">
+        <div class="tech-card html-card" onclick="window.location.href='html-levels.html'" tabindex="0" role="button" aria-label="HTML learning path">
           <div class="card-glow"></div>
           <div class="card-icon">
-            <span class="icon-bracket">&lt;/&gt;</span>
+            <i class="bi bi-filetype-html"></i>
+          </div>
+          <div class="card-badge-group">
+            <span class="card-badge theory-badge">Theory</span>
+            <span class="card-badge lab-badge">Lab</span>
           </div>
           <h3 class="card-title">HTML</h3>
           <p class="card-description">
             Learn the structure of the web. Build pages with headings, paragraphs, images, links, and more.
           </p>
+          <div class="card-progress-mini">
+            <div class="progress-track">
+              <div class="progress-fill" style="width: 0%;"></div>
+            </div>
+            <span class="progress-label">4 Levels</span>
+          </div>
           <span class="card-link">
-            Start learning <span class="arrow">→</span>
+            Start learning <i class="bi bi-arrow-right"></i>
           </span>
         </div>
 
-        <div class="tech-card css-card" onclick="window.location.href='css-levels.html'">
+        <div class="tech-card css-card" onclick="window.location.href='css-levels.html'" tabindex="0" role="button" aria-label="CSS learning path">
           <div class="card-glow"></div>
           <div class="card-icon">
-            <span class="icon-bracket">#</span>
+            <i class="bi bi-filetype-css"></i>
+          </div>
+          <div class="card-badge-group">
+            <span class="card-badge workshop-badge">Workshop</span>
+            <span class="card-badge project-badge">Project</span>
           </div>
           <h3 class="card-title">CSS</h3>
           <p class="card-description">
             Master styling and layout. Create beautiful designs with colors, fonts, flexbox, and grid.
           </p>
+          <div class="card-progress-mini">
+            <div class="progress-track">
+              <div class="progress-fill" style="width: 0%;"></div>
+            </div>
+            <span class="progress-label">20 Levels</span>
+          </div>
           <span class="card-link">
-            Start learning <span class="arrow">→</span>
+            Start learning <i class="bi bi-arrow-right"></i>
           </span>
         </div>
 
-        <div class="tech-card js-card" onclick="alert('JavaScript lessons coming soon! Start with HTML first.')">
+        <div class="tech-card js-card" onclick="alert('JavaScript lessons coming soon! Start with HTML first.')" tabindex="0" role="button" aria-label="JavaScript learning path">
           <div class="card-glow"></div>
           <div class="card-icon">
-            <span class="icon-bracket">{ }</span>
+            <i class="bi bi-filetype-js"></i>
+          </div>
+          <div class="card-badge-group">
+            <span class="card-badge quiz-badge">Quiz</span>
+            <span class="card-badge coming-badge">Coming</span>
           </div>
           <h3 class="card-title">JavaScript</h3>
           <p class="card-description">
             Bring your pages to life. Learn functions, events, DOM manipulation, and interactive features.
           </p>
+          <div class="card-progress-mini">
+            <div class="progress-track">
+              <div class="progress-fill" style="width: 0%;"></div>
+            </div>
+            <span class="progress-label">Coming soon</span>
+          </div>
           <span class="card-link">
-            Coming soon <span class="arrow">→</span>
+            Coming soon <i class="bi bi-arrow-right"></i>
           </span>
         </div>
       </div>
@@ -179,7 +243,37 @@
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="container">
-      <p>Built with <span class="footer-brand">Codixify</span> &mdash; The Future of Learning</p>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="logo-icon" style="width:28px;height:28px;font-size:0.7rem;">C</span>
+            <span style="font-family:var(--font-heading);font-weight:700;font-size:1.1rem;">Codixify</span>
+          </div>
+          <p class="footer-desc">Learn coding by building real projects. Interactive lessons, instant feedback, zero setup.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="GitHub"><i class="bi bi-github"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="social-link" aria-label="Discord"><i class="bi bi-discord"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Learning</h4>
+            <a href="html-levels.html">HTML</a>
+            <a href="css-levels.html">CSS</a>
+            <a href="#">JavaScript</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="#about">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Privacy</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Codixify. Built with <i class="bi bi-heart-fill" style="color:var(--danger);"></i> for learners everywhere.</p>
+      </div>
     </div>
   </footer>
 
