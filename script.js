@@ -2949,7 +2949,9 @@ document.addEventListener('DOMContentLoaded', function () {
         var dot = document.createElement('button');
         dot.className = 'progress-dot';
         dot.textContent = i + 1;
-        dot.setAttribute('aria-label', 'Go to step ' + (i + 1));
+        var stepTitle = steps[i].title || '';
+        dot.title = 'Step ' + (i + 1) + ': ' + stepTitle;
+        dot.setAttribute('aria-label', 'Go to step ' + (i + 1) + ': ' + stepTitle);
         if (i === state.currentStep) dot.classList.add('active');
         else if (state.completedSteps[i]) dot.classList.add('completed');
         dot.addEventListener('click', (function (idx) {
@@ -2957,38 +2959,6 @@ document.addEventListener('DOMContentLoaded', function () {
         })(i));
         progressDots.appendChild(dot);
       }
-      progressDots.addEventListener('scroll', updateScrollFade, { passive: true });
-      updateScrollFade();
-      window.addEventListener('resize', updateScrollFade);
-    }
-
-    /* ===== PROGRESS DOTS SCROLL HELPERS ===== */
-    function scrollActiveDotIntoView() {
-      if (!progressDots) return;
-      var activeDot = progressDots.querySelector('.progress-dot.active');
-      if (!activeDot) return;
-      var cw = progressDots.clientWidth;
-      var sl = progressDots.scrollLeft;
-      var dol = activeDot.offsetLeft;
-      var dw = activeDot.offsetWidth;
-      if (dol < sl) {
-        progressDots.scrollLeft = dol - 8;
-      } else if (dol + dw > sl + cw) {
-        progressDots.scrollLeft = dol + dw - cw + 8;
-      }
-    }
-
-    function updateScrollFade() {
-      if (!progressDots) return;
-      var sw = progressDots.scrollWidth;
-      var cw = progressDots.clientWidth;
-      if (sw <= cw) {
-        progressDots.classList.remove('fade-left', 'fade-right');
-        return;
-      }
-      var sl = progressDots.scrollLeft;
-      progressDots.classList.toggle('fade-left', sl > 2);
-      progressDots.classList.toggle('fade-right', sl + cw < sw - 2);
     }
 
     /* ===== GO TO STEP ===== */
@@ -3119,8 +3089,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if (i === state.currentStep) dot.classList.add('active');
         else if (state.completedSteps[i]) dot.classList.add('completed');
       });
-      scrollActiveDotIntoView();
-      updateScrollFade();
     }
 
     /* ===== CODE EDITOR LINE NUMBERS ===== */
