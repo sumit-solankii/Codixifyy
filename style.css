@@ -2672,9 +2672,10 @@ img {
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-xl);
-  padding: 36px 32px 32px;
-  max-width: 520px;
-  width: 100%;
+  padding: 32px 36px 28px;
+  max-width: 1050px;
+  width: 75vw;
+  min-width: 900px;
   position: relative;
   animation: scaleIn 0.35s ease;
   box-shadow: 0 0 60px rgba(0, 212, 255, 0.08), var(--shadow-card);
@@ -2709,7 +2710,7 @@ img {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .preview-level-circle {
@@ -2744,22 +2745,22 @@ img {
   font-family: var(--font-heading);
   font-size: 1.6rem;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 6px;
   line-height: 1.3;
 }
 
 .preview-modal-desc {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--text-secondary);
-  line-height: 1.7;
-  margin-bottom: 20px;
+  line-height: 1.6;
+  margin-bottom: 14px;
 }
 
 .preview-modal-meta {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  margin-bottom: 24px;
+  margin-bottom: 18px;
 }
 
 .preview-meta-item {
@@ -2776,7 +2777,7 @@ img {
 }
 
 .preview-modal-output {
-  margin-bottom: 24px;
+  margin-bottom: 18px;
 }
 
 .preview-output-label {
@@ -2793,7 +2794,7 @@ img {
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: #fff;
-  height: 260px;
+  height: 460px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
 }
 
@@ -2813,12 +2814,24 @@ img {
 .preview-start-btn {
   width: 100%;
   justify-content: center;
-  padding: 14px 32px;
+  height: 56px;
+  border-radius: 14px;
+  font-size: 1rem;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1024px) {
   .level-preview-modal {
-    padding: 28px 20px 24px;
+    width: 85vw;
+    min-width: unset;
+    padding: 28px 28px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .level-preview-modal {
+    width: 95vw;
+    min-width: unset;
+    padding: 24px 20px 20px;
   }
 
   .preview-modal-title {
@@ -2830,7 +2843,18 @@ img {
   }
 
   .preview-output-frame-wrap {
-    height: 200px;
+    height: 320px;
+  }
+
+  .preview-start-btn {
+    height: 50px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .preview-output-frame-wrap {
+    height: 260px;
   }
 }
 
