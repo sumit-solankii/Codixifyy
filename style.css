@@ -614,6 +614,14 @@ img {
 .btn-sm {
   padding: 10px 20px;
   font-size: 0.85rem;
+  border-radius: 10px;
+}
+
+.level-card-footer .btn-sm {
+  padding: 8px 18px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: 10px;
 }
 
 .hero-stats {
@@ -1162,7 +1170,7 @@ img {
   background: rgba(15, 15, 42, 0.5);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 16px 24px;
+  padding: 8px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1631,7 +1639,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 20px;
+  padding: 6px 20px;
   background: rgba(15, 15, 42, 0.6);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -1658,33 +1666,44 @@ img {
 
 .toolbar-right {
   display: flex;
-  align-items: center;
-  gap: 8px;
+  flex-direction: column;
+  gap: 12px;
   flex-shrink: 0;
+}
+
+.toolbar-right-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: flex-end;
 }
 
 .toolbar-btn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 8px 18px;
-  font-size: 0.82rem;
+  gap: 8px;
+  padding: 14px 24px;
+  font-size: 16px;
   font-weight: 600;
-  border-radius: var(--radius-sm);
+  border-radius: 12px;
   transition: var(--transition-fast);
   white-space: nowrap;
-  height: 36px;
+  height: 50px;
   position: relative;
 }
 
 .toolbar-btn svg {
   flex-shrink: 0;
+  width: 18px;
+  height: 18px;
 }
 
 .toolbar-back {
   background: rgba(255, 255, 255, 0.05);
   color: var(--text-secondary);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  height: 50px;
+  padding: 14px 20px;
 }
 
 .toolbar-back:hover:not(:disabled) {
@@ -1698,36 +1717,39 @@ img {
 }
 
 .toolbar-run {
-  background: rgba(16, 185, 129, 0.12);
-  color: var(--neon-green);
-  border: 1px solid rgba(16, 185, 129, 0.2);
+  background: #22c55e;
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 16px rgba(34, 197, 94, 0.3);
 }
 
 .toolbar-run:hover {
-  background: rgba(16, 185, 129, 0.22);
+  background: #16a34a;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(34, 197, 94, 0.4);
 }
 
 .toolbar-clear {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.06);
   color: var(--text-muted);
   border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .toolbar-clear:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.12);
   color: var(--text-secondary);
 }
 
 .toolbar-next {
-  background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
   color: #fff;
   border: none;
-  box-shadow: 0 4px 20px rgba(0, 212, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
 }
 
 .toolbar-next:hover:not(:disabled) {
   transform: translateY(-1px);
-  box-shadow: 0 6px 25px rgba(0, 212, 255, 0.4);
+  box-shadow: 0 6px 25px rgba(59, 130, 246, 0.4);
 }
 
 .toolbar-next:disabled {
@@ -1738,12 +1760,12 @@ img {
 }
 
 .toolbar-next.final {
-  background: linear-gradient(135deg, var(--neon-green), var(--neon-cyan));
-  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
+  background: linear-gradient(135deg, #22c55e, #06b6d4);
+  box-shadow: 0 4px 20px rgba(34, 197, 94, 0.3);
 }
 
 .toolbar-next.final:hover:not(:disabled) {
-  box-shadow: 0 6px 25px rgba(16, 185, 129, 0.4);
+  box-shadow: 0 6px 25px rgba(34, 197, 94, 0.4);
 }
 
 /* ===== KEYBOARD SHORTCUT TOOLTIPS ===== */
@@ -1776,31 +1798,31 @@ img {
 
 .toolbar-step-title {
   font-family: var(--font-heading);
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--text-primary);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 100%;
-  line-height: 1.3;
+  line-height: 1.2;
 }
 
 .toolbar-step-meta {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 12px;
+  gap: 6px;
   min-width: 0;
   max-width: 100%;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 18px;
-  padding: 20px;
+  border-radius: 12px;
+  padding: 10px 14px;
 }
 
 .toolbar-step-badge {
-  font-size: 0.72rem;
+  font-size: 0.65rem;
   color: var(--text-muted);
   font-weight: 500;
   text-align: center;
@@ -1809,23 +1831,65 @@ img {
 
 .toolbar-progress-dots {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: center;
+  flex-wrap: nowrap;
+  gap: 8px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
   width: 100%;
   max-width: 100%;
+  padding: 2px 0 4px;
+  position: relative;
+}
+
+.toolbar-progress-dots::-webkit-scrollbar {
+  display: none;
+}
+
+.toolbar-progress-dots::before,
+.toolbar-progress-dots::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  bottom: 4px;
+  width: 24px;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 4px;
+}
+
+.toolbar-progress-dots::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(15, 15, 42, 0.95), transparent);
+}
+
+.toolbar-progress-dots::after {
+  right: 0;
+  background: linear-gradient(to left, rgba(15, 15, 42, 0.95), transparent);
+}
+
+.toolbar-progress-dots.fade-left::before {
+  opacity: 1;
+}
+
+.toolbar-progress-dots.fade-right::after {
+  opacity: 1;
 }
 
 .toolbar-progress-dots .progress-dot {
-  width: 56px;
-  height: 56px;
-  min-width: 52px;
-  min-height: 52px;
-  border-radius: 14px;
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  min-height: 44px;
+  border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: rgba(255, 255, 255, 0.04);
   color: var(--text-secondary);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   display: inline-flex;
   align-items: center;
@@ -1836,6 +1900,7 @@ img {
   padding: 0;
   line-height: 1;
   position: relative;
+  flex-shrink: 0;
 }
 
 .toolbar-progress-dots .progress-dot:hover:not(:disabled) {
@@ -1858,13 +1923,13 @@ img {
 .toolbar-progress-dots .progress-dot.completed::after {
   content: '\\2713';
   position: absolute;
-  top: -4px;
-  right: -4px;
-  font-size: 10px;
+  top: -3px;
+  right: -3px;
+  font-size: 9px;
   background: #22c55e;
   color: #fff;
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -2318,12 +2383,6 @@ img {
     text-align: center;
   }
 
-  .toolbar-right {
-    order: 1;
-    flex: 1;
-    justify-content: flex-end;
-  }
-
   .toolbar-step-title {
     font-size: 0.85rem;
   }
@@ -2343,9 +2402,28 @@ img {
   }
 
   .toolbar-btn {
-    padding: 8px 14px;
-    font-size: 0.78rem;
-    height: 34px;
+    padding: 12px 18px;
+    font-size: 14px;
+    height: 44px;
+    border-radius: 10px;
+  }
+
+  .toolbar-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .toolbar-back {
+    height: 44px;
+    padding: 12px 16px;
+  }
+
+  .toolbar-right {
+    gap: 10px;
+  }
+
+  .toolbar-right-row {
+    gap: 12px;
   }
 
   .level-header {
@@ -2374,21 +2452,17 @@ img {
   }
 
   .toolbar-step-meta {
-    padding: 16px;
-    gap: 10px;
-  }
-
-  .toolbar-progress-dots {
-    gap: 10px;
+    padding: 8px 12px;
+    gap: 5px;
   }
 
   .toolbar-progress-dots .progress-dot {
-    width: 48px;
-    height: 48px;
-    min-width: 44px;
-    min-height: 44px;
-    font-size: 15px;
-    border-radius: 12px;
+    width: 40px;
+    min-width: 40px;
+    height: 40px;
+    min-height: 40px;
+    font-size: 14px;
+    border-radius: 9px;
   }
 }
 
@@ -2437,13 +2511,28 @@ img {
   }
 
   .toolbar-btn {
-    padding: 6px 12px;
-    font-size: 0.75rem;
-    height: 32px;
+    padding: 10px 14px;
+    font-size: 13px;
+    height: 40px;
+    border-radius: 9px;
+  }
+
+  .toolbar-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .toolbar-back {
+    height: 40px;
+    padding: 10px 14px;
   }
 
   .toolbar-right {
-    gap: 4px;
+    gap: 8px;
+  }
+
+  .toolbar-right-row {
+    gap: 10px;
   }
 
   .editor-wrapper .line-numbers {
@@ -2464,21 +2553,21 @@ img {
   }
 
   .toolbar-step-meta {
-    padding: 12px;
-    gap: 8px;
+    padding: 6px 10px;
+    gap: 4px;
   }
 
   .toolbar-progress-dots {
-    gap: 8px;
+    gap: 6px;
   }
 
   .toolbar-progress-dots .progress-dot {
-    width: 44px;
-    height: 44px;
-    min-width: 40px;
-    min-height: 40px;
-    font-size: 13px;
-    border-radius: 10px;
+    width: 36px;
+    min-width: 36px;
+    height: 36px;
+    min-height: 36px;
+    font-size: 12px;
+    border-radius: 8px;
   }
 }
 
@@ -2515,13 +2604,27 @@ img {
 
 .level-card {
   position: relative;
-  background: rgba(15, 15, 42, 0.5);
+  background: linear-gradient(180deg, rgba(15, 15, 42, 0.6), rgba(11, 16, 32, 0.8));
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: var(--radius-lg);
-  padding: 28px 32px;
-  transition: var(--transition-normal);
-  overflow: hidden;     
+  border-radius: 20px;
+  padding: 32px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.level-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
 }
 
 .level-card.card-available {
@@ -2529,23 +2632,27 @@ img {
 }
 
 .level-card.card-available:hover {
-  transform: translateY(-4px);
-  border-color: rgba(0, 212, 255, 0.25);
-  box-shadow: 0 12px 40px rgba(0, 212, 255, 0.1), var(--shadow-card);
+  transform: translateY(-6px) scale(1.01);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+}
+
+.level-card.card-available:hover::before {
+  opacity: 1;
 }
 
 .level-card .card-glow {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   border-radius: var(--radius-full);
-  transform: translate(-50%, -50%) scale(0.8);
+  transform: translate(-50%, -50%) scale(0.6);
   opacity: 0;
-  transition: var(--transition-normal);
+  transition: all 0.5s ease;
   pointer-events: none;
-  background: radial-gradient(circle, rgba(0, 212, 255, 0.08), transparent);
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.06), transparent);
 }
 
 .level-card.card-available:hover .card-glow {
@@ -2563,25 +2670,38 @@ img {
 }
 
 .level-number {
-  width: 48px;
-  height: 48px;
-  border-radius: var(--radius-full);
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
   background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-heading);
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   font-weight: 800;
   color: #fff;
   flex-shrink: 0;
-  box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+  box-shadow: 0 0 24px rgba(99, 102, 241, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.level-number::after {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
 }
 
 .difficulty-badge {
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   padding: 4px 14px;
   border-radius: 100px;
@@ -2589,40 +2709,42 @@ img {
 }
 
 .difficulty-badge.beginner {
-  background: rgba(16, 185, 129, 0.1);
+  background: rgba(16, 185, 129, 0.12);
   border: 1px solid rgba(16, 185, 129, 0.2);
-  color: var(--neon-green);
+  color: #34d399;
 }
 
 .difficulty-badge.intermediate {
-  background: rgba(251, 146, 60, 0.1);
+  background: rgba(251, 146, 60, 0.12);
   border: 1px solid rgba(251, 146, 60, 0.2);
   color: #fb923c;
 }
 
 .difficulty-badge.advanced {
-  background: rgba(239, 68, 68, 0.1);
+  background: rgba(239, 68, 68, 0.12);
   border: 1px solid rgba(239, 68, 68, 0.2);
-  color: #ef4444;
+  color: #f87171;
 }
 
 .level-card-title {
   font-family: var(--font-heading);
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 8px;
   position: relative;
   z-index: 1;
+  color: #fff;
 }
 
 .level-card-desc {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.55);
   line-height: 1.7;
   margin-bottom: 20px;
   position: relative;
   z-index: 1;
   max-width: 600px;
+  flex: 1;
 }
 
 .level-progress {
@@ -2636,9 +2758,9 @@ img {
 
 .progress-bar {
   flex: 1;
-  height: 6px;
+  height: 5px;
   background: rgba(255, 255, 255, 0.06);
-  border-radius: 3px;
+  border-radius: 10px;
   overflow: hidden;
   max-width: 200px;
 }
@@ -2646,14 +2768,15 @@ img {
 .progress-fill {
   height: 100%;
   background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
-  border-radius: 3px;
+  border-radius: 10px;
   transition: width 0.5s ease;
 }
 
 .progress-text {
-  font-size: 0.8rem;
-  color: var(--text-muted);
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.4);
   font-weight: 600;
+  min-width: 32px;
 }
 
 .level-card-footer {
@@ -2665,8 +2788,16 @@ img {
 }
 
 .level-lessons {
-  font-size: 0.85rem;
-  color: var(--text-muted);
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.level-lessons i {
+  font-size: 0.9rem;
+  opacity: 0.6;
 }
 
 /* ===== LEVEL PREVIEW MODAL ===== */
@@ -2876,9 +3007,106 @@ img {
   }
 }
 
+@media (max-width: 768px) {
+  .levels-container {
+    padding: 0 16px 60px;
+  }
+
+  .level-card {
+    padding: 24px;
+  }
+
+  .level-card-title {
+    font-size: 1.15rem;
+  }
+
+  .level-card-desc {
+    font-size: 0.82rem;
+  }
+
+  .level-number {
+    width: 44px;
+    height: 44px;
+    font-size: 1.2rem;
+    border-radius: 12px;
+  }
+
+  .levels-hero {
+    padding: 60px 0 32px;
+  }
+
+  .css-roadmap {
+    max-width: 360px;
+  }
+
+  .phase-connector {
+    min-width: 20px;
+  }
+
+  .phase-break {
+    margin: 32px 0;
+  }
+
+  .phase-break-badge {
+    font-size: 0.6rem;
+    padding: 4px 14px;
+  }
+}
+
 @media (max-width: 480px) {
   .preview-output-frame-wrap {
     height: 260px;
+  }
+
+  .levels-container {
+    padding: 0 12px 40px;
+  }
+
+  .level-card {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .level-card-header {
+    margin-bottom: 12px;
+  }
+
+  .level-card-title {
+    font-size: 1.05rem;
+  }
+
+  .level-card-desc {
+    font-size: 0.78rem;
+    margin-bottom: 16px;
+  }
+
+  .level-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+  }
+
+  .difficulty-badge {
+    font-size: 0.55rem;
+    padding: 3px 10px;
+  }
+
+  .level-progress {
+    margin-bottom: 16px;
+  }
+
+  .progress-bar {
+    height: 4px;
+  }
+
+  .levels-hero {
+    padding: 48px 0 24px;
+  }
+
+  .level-card-footer .btn-sm {
+    padding: 6px 14px;
+    font-size: 0.75rem;
   }
 }
 
@@ -3053,18 +3281,4 @@ img {
 }
 
 /* ===== RESPONSIVE: CSS LEVELS PAGE ===== */
-@media (max-width: 768px) {
-  .css-roadmap {
-    max-width: 360px;
-  }
-  .phase-connector {
-    min-width: 20px;
-  }
-  .phase-break {
-    margin: 32px 0;
-  }
-  .phase-break-badge {
-    font-size: 0.6rem;
-    padding: 4px 14px;
-  }
-}
+
