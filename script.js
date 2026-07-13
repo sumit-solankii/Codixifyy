@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function () {
         description: 'The <code>&lt;html&gt;</code> tag is the <strong>root element</strong> of your entire webpage. Everything else goes inside it.<br><br>Think of it like the outer shell of a document — you open it at the top and close it at the bottom.<br><br>For this step, write the DOCTYPE from step 1, then add the opening and closing html tags.',
         task: 'Write <code>&lt;!DOCTYPE html&gt;</code> on line 1, then <code>&lt;html&gt;</code> on line 2, and <code>&lt;/html&gt;</code> on line 3.',
         tip: 'The &lt;html&gt; tag has both an opening &lt;html&gt; and a closing &lt;/html&gt; tag. Never skip the closing tag.',
-        startingCode: '',
+        startingCode: '<!DOCTYPE html>',
         validate: function (code) { return code.indexOf('<!DOCTYPE html>') !== -1 && code.indexOf('<html>') !== -1 && code.indexOf('</html>') !== -1; },
         getHint: function (code) { if (code.indexOf('<!DOCTYPE html>') === -1) return 'Start with &lt;!DOCTYPE html&gt; on line 1.'; if (code.indexOf('<html>') === -1) return 'Add &lt;html&gt; after DOCTYPE.'; if (code.indexOf('</html>') === -1) return 'Close with &lt;/html&gt; at the end.'; return 'Your structure should be: DOCTYPE, then &lt;html&gt;, then &lt;/html&gt;.'; },
         successMsg: 'Excellent! You have the DOCTYPE and html tags — the foundation of every webpage.',
@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function () {
         description: 'The <code>&lt;head&gt;</code> tag holds <strong>information about the webpage</strong> that is not directly visible on the screen. Things like the title, character encoding, and links to stylesheets live here.<br><br>The head comes after the opening html tag and before the body.<br><br>Now write the structure with DOCTYPE, html, head, and their closing tags.',
         task: 'Write the full structure: <code>&lt;!DOCTYPE html&gt;</code>, <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;/head&gt;</code>, <code>&lt;/html&gt;</code> in that order.',
         tip: 'Everything in the &lt;head&gt; is for the browser and search engines — users do not see it directly.',
-        startingCode: '',
+        startingCode: '<!DOCTYPE html>\n<html>\n</html>',
         validate: function (code) { return code.indexOf('<!DOCTYPE html>') !== -1 && code.indexOf('<html>') !== -1 && code.indexOf('<head>') !== -1 && code.indexOf('</head>') !== -1 && code.indexOf('</html>') !== -1; },
         getHint: function (code) { if (code.indexOf('<!DOCTYPE html>') === -1) return 'Start with &lt;!DOCTYPE html&gt;.'; if (code.indexOf('<html>') === -1) return 'Add &lt;html&gt; after DOCTYPE.'; if (code.indexOf('<head>') === -1) return 'Add &lt;head&gt; inside &lt;html&gt;.'; if (code.indexOf('</head>') === -1) return 'Close the head with &lt;/head&gt;.'; if (code.indexOf('</html>') === -1) return 'Close with &lt;/html&gt; at the end.'; return 'Check your order: DOCTYPE, html, head, /head, /html.'; },
         successMsg: 'Great! Your page structure now includes the head section for page information.',
@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function () {
         description: 'The <code>&lt;title&gt;</code> tag goes inside the head. It sets the text that appears on the <strong>browser tab</strong> and is used by search engines as the page name.<br><br>If you do not add a title, the browser tab shows the file name instead — which looks unprofessional.<br><br>Write the full structure with the title "My First Page" inside the head.',
         task: 'Write DOCTYPE, html, head, and add <code>&lt;title&gt;My First Page&lt;/title&gt;</code> inside the head. Then close head and html properly.',
         tip: 'The title is what users see in their browser tab. Always give your page a clear, descriptive title.',
-        startingCode: '',
+        startingCode: '<!DOCTYPE html>\n<html>\n<head>\n</head>\n</html>',
         validate: function (code) { return code.indexOf('<!DOCTYPE html>') !== -1 && code.indexOf('<html>') !== -1 && code.indexOf('<head>') !== -1 && code.indexOf('<title>My First Page</title>') !== -1 && code.indexOf('</head>') !== -1 && code.indexOf('</html>') !== -1; },
         getHint: function (code) { if (code.indexOf('<!DOCTYPE html>') === -1) return 'Start with &lt;!DOCTYPE html&gt;.'; if (code.indexOf('<html>') === -1) return 'Add &lt;html&gt;.'; if (code.indexOf('<head>') === -1) return 'Add &lt;head&gt;.'; if (code.indexOf('<title>') === -1) return 'Add &lt;title&gt; inside the head.'; if (code.indexOf('My First Page') === -1) return 'The title text should say: My First Page'; if (code.indexOf('</title>') === -1) return 'Close the title with &lt;/title&gt;.'; if (code.indexOf('</head>') === -1) return 'Close the head with &lt;/head&gt;.'; return 'Close with &lt;/html&gt; at the end.'; },
         successMsg: 'Wonderful! Your page now has a title that appears on the browser tab.',
@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', function () {
         description: 'The <code>&lt;body&gt;</code> tag holds everything that users <strong>see</strong> on the webpage — headings, paragraphs, images, buttons, and more.<br><br>The body comes after the head and before the closing html tag. Without the body, your page would be blank!<br><br>This is the final step to complete the basic HTML structure.',
         task: 'Write the complete basic HTML structure with DOCTYPE, html, head, title "My First Page", body, and all closing tags in the right order.',
         tip: 'Everything you see on a website — text, images, buttons — lives inside the &lt;body&gt; tag.',
-        startingCode: '',
+        startingCode: '<!DOCTYPE html>\n<html>\n<head>\n  <title>My First Page</title>\n</head>\n</html>',
         validate: function (code) { return code.indexOf('<!DOCTYPE html>') !== -1 && code.indexOf('<html>') !== -1 && code.indexOf('<head>') !== -1 && code.indexOf('<title>My First Page</title>') !== -1 && code.indexOf('</head>') !== -1 && code.indexOf('<body>') !== -1 && code.indexOf('</body>') !== -1 && code.indexOf('</html>') !== -1; },
         getHint: function (code) { if (code.indexOf('<!DOCTYPE html>') === -1) return 'Start with &lt;!DOCTYPE html&gt;.'; if (code.indexOf('<html>') === -1) return 'Add &lt;html&gt;.'; if (code.indexOf('<head>') === -1) return 'Add &lt;head&gt;.'; if (code.indexOf('<title>My First Page</title>') === -1) return 'Add &lt;title&gt;My First Page&lt;/title&gt; inside head.'; if (code.indexOf('</head>') === -1) return 'Close the head with &lt;/head&gt;.'; if (code.indexOf('<body>') === -1) return 'Add &lt;body&gt; after the head.'; if (code.indexOf('</body>') === -1) return 'Close the body with &lt;/body&gt;.'; if (code.indexOf('</html>') === -1) return 'Close with &lt;/html&gt; at the end.'; return 'Your structure should be: DOCTYPE, html, head (with title), /head, body, /body, /html.'; },
         successMsg: 'Perfect! You now know the basic structure of every HTML document. This is the skeleton of the web!',
@@ -3046,14 +3046,6 @@ document.addEventListener('DOMContentLoaded', function () {
       var restoreCode;
       if (state.savedCodes.hasOwnProperty(index)) {
         restoreCode = state.savedCodes[index];
-      } else if (levelId === '1' && index > 0 && index <= 4) {
-        for (var i = index - 1; i >= 0; i--) {
-          if (state.savedCodes.hasOwnProperty(i)) {
-            restoreCode = state.savedCodes[i];
-            break;
-          }
-        }
-        if (restoreCode === undefined) restoreCode = step.startingCode;
       } else {
         restoreCode = step.startingCode;
       }
@@ -3235,11 +3227,13 @@ document.addEventListener('DOMContentLoaded', function () {
     function clearCode() {
       var step = steps[state.currentStep];
       if (!step) return;
+      var index = state.currentStep;
+      var starterCode = step.startingCode;
 
-      state.code = step.startingCode;
-      state.savedCodes[state.currentStep] = step.startingCode;
+      state.code = starterCode;
+      state.savedCodes[index] = starterCode;
       if (codeEditor) {
-        codeEditor.value = step.startingCode;
+        codeEditor.value = starterCode;
         updateLineNumbers();
       }
 
@@ -3566,10 +3560,13 @@ document.addEventListener('DOMContentLoaded', function () {
       clearCode = function() {
         var step = steps[state.currentStep];
         if (!step) return;
-        state.htmlCode = step.startingHtml || '';
-        state.cssCode = step.startingCss || '';
-        state.htmlSavedCodes[state.currentStep] = state.htmlCode;
-        state.cssSavedCodes[state.currentStep] = state.cssCode;
+        var idx = state.currentStep;
+        var starterHtml = step.startingHtml || '';
+        var starterCss = step.startingCss || '';
+        state.htmlCode = starterHtml;
+        state.cssCode = starterCss;
+        state.htmlSavedCodes[idx] = state.htmlCode;
+        state.cssSavedCodes[idx] = state.cssCode;
         if (htmlEditor) htmlEditor.value = state.htmlCode;
         if (cssEditor) cssEditor.value = state.cssCode;
         updateLineNumbers();
